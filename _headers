@@ -1,0 +1,29 @@
+/*
+  # ── Seguridad HTTP ────────────────────────────────────────────
+  # Este archivo aplica en Netlify y Cloudflare Pages.
+  # GitHub Pages NO soporta headers personalizados de forma nativa.
+  # Para GitHub Pages: usar Cloudflare como proxy (recomendado).
+  # ──────────────────────────────────────────────────────────────
+
+  # Evita que el browser adivine el Content-Type (mitiga ataques MIME-sniffing)
+  X-Content-Type-Options: nosniff
+
+  # Impide que la página sea embebida en iframes (clickjacking)
+  X-Frame-Options: DENY
+
+  # Controla cuánta información referrer se envía a terceros
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Deshabilita APIs del browser que no se usan
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+  # Content Security Policy — define exactamente qué puede cargar la página
+  # Notas:
+  #   - 'unsafe-inline' en style-src es necesario por atributos style="" en el HTML
+  #   - Para eliminarlo: mover todos los style="" a clases CSS
+  #   - script-src NO tiene 'unsafe-inline' — protección real contra XSS
+  #   - frame-ancestors reemplaza X-Frame-Options cuando se envía como header HTTP
+  Content-Security-Policy: default-src 'none'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; font-src https://cdnjs.cloudflare.com https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: https://images.credly.com; manifest-src data:; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;
+
+  # Fuerza HTTPS por 1 año, incluye subdominios
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
