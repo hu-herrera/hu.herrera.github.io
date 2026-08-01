@@ -243,10 +243,12 @@ h1 {
 .cert-group-label::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(0,180,216,.2),transparent); }
 .cert-group-label:first-of-type { margin-top:.25rem; }
 
-/* Certifications — full-width grouped section */
+/* Certifications — full-width grouped section.
+   Masonry via CSS columns: cards flow and fill gaps instead of leaving a hole
+   under the short groups (Business has 2 items, Networking has 12). */
 .certs-section { margin-top:3rem; }
-.certs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:1rem; align-items:start; }
-.cert-group { padding:1.25rem 1.35rem; }
+.certs-grid { column-width:330px; column-gap:1rem; }
+.cert-group { padding:1.25rem 1.35rem; break-inside:avoid; margin-bottom:1rem; }
 .cert-group-head { font-size:.82rem; font-weight:700; color:var(--text); display:flex; align-items:center; gap:.55rem; margin-bottom:.85rem; padding-bottom:.7rem; border-bottom:1px solid var(--border); letter-spacing:.01em; }
 .cert-group-head i { color:var(--cyan); width:16px; text-align:center; }
 
@@ -461,10 +463,6 @@ h1 {
 
     <!-- ── Contact info ─────────────────────────────────── -->
     <div class="contact-bar">
-      <a href="tel:+56965801184" aria-label="Phone number">
-        <i class="fas fa-phone" aria-hidden="true"></i>
-        +56 9 6580 1184
-      </a>
       <a href="mailto:hu.herrera@outlook.com" aria-label="Email">
         <i class="fas fa-envelope" aria-hidden="true"></i>
         hu.herrera@outlook.com
@@ -1038,9 +1036,6 @@ h1 {
   <!-- ── FOOTER ─────────────────────────────────── -->
   <footer class="footer reveal">
     <nav class="footer-links" aria-label="Contact">
-      <a href="tel:+56965801184" class="footer-link" aria-label="Phone number">
-        <i class="fas fa-phone" aria-hidden="true"></i> +56 9 6580 1184
-      </a>
       <a href="mailto:hu.herrera@outlook.com" class="footer-link" aria-label="Email">
         <i class="fas fa-envelope" aria-hidden="true"></i> Email
       </a>
