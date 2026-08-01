@@ -117,6 +117,13 @@ body::before {
 
 /* ── Hero ────────────────────────────────────────────── */
 .hero { padding:3.5rem 0 3.5rem; border-bottom:1px solid var(--border); margin-bottom:3rem; }
+.hero-top { display:flex; align-items:center; justify-content:space-between; gap:2rem; }
+.hero-intro { min-width:0; }
+.hero-avatar {
+  width:130px; height:130px; border-radius:50%; object-fit:cover; flex-shrink:0;
+  border:2px solid var(--border-hi);
+  box-shadow:0 0 0 6px rgba(16,185,129,.06), 0 18px 44px -14px rgba(0,0,0,.7);
+}
 
 .hero-eyebrow {
   font-family:var(--font-mono); font-size:.75rem; color:var(--purple);
@@ -166,6 +173,12 @@ h1 {
 }
 .contact-bar a:hover { color:var(--purple); }
 .contact-bar i { color:var(--purple); width:1rem; }
+.download-cv {
+  color:var(--purple) !important; font-weight:600;
+  border:1px solid var(--border-hi); border-radius:6px;
+  padding:.28rem .7rem !important; transition:background .2s, transform .2s;
+}
+.download-cv:hover { background:rgba(16,185,129,.1); transform:translateY(-1px); }
 
 /* Stats */
 .stats-bar { display:flex; gap:2.5rem; margin-bottom:2rem; flex-wrap:wrap; }
@@ -229,6 +242,13 @@ h1 {
 .cert-group-label { font-size:.62rem; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.14em; color:var(--cyan); margin:1.15rem 0 .5rem; display:flex; align-items:center; gap:.5rem; }
 .cert-group-label::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(0,180,216,.2),transparent); }
 .cert-group-label:first-of-type { margin-top:.25rem; }
+
+/* Certifications — full-width grouped section */
+.certs-section { margin-top:3rem; }
+.certs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:1rem; align-items:start; }
+.cert-group { padding:1.25rem 1.35rem; }
+.cert-group-head { font-size:.82rem; font-weight:700; color:var(--text); display:flex; align-items:center; gap:.55rem; margin-bottom:.85rem; padding-bottom:.7rem; border-bottom:1px solid var(--border); letter-spacing:.01em; }
+.cert-group-head i { color:var(--cyan); width:16px; text-align:center; }
 
 .cert-item { display:flex; align-items:baseline; gap:.55rem; padding:.32rem 0; font-size:.82rem; }
 
@@ -353,6 +373,55 @@ h1 {
   .footer { flex-direction:column; align-items:flex-start; }
   .badges-grid { grid-template-columns:repeat(2,1fr); }
   .contact-bar { flex-direction:column; gap:.5rem; }
+  .hero-top { flex-direction:row-reverse; justify-content:flex-end; gap:1rem; align-items:center; }
+  .hero-avatar { width:76px; height:76px; }
+}
+
+/* ── Print / PDF ─────────────────────────────────────── */
+@media print {
+  @page { size:A4; margin:14mm 14mm; }
+  html { scroll-behavior:auto; }
+  body { background:#fff; color:#1f2937; line-height:1.5; }
+  body::before, .orb, .scroll-top, .cursor, .skip-link, .btn-soon { display:none !important; }
+  .page { max-width:none; padding:0; }
+  .reveal { opacity:1 !important; transform:none !important; }
+
+  /* Ink-friendly: solid dark headings instead of the screen gradient */
+  h1 { -webkit-text-fill-color:#0f172a; color:#0f172a; background:none; letter-spacing:-1px; }
+  .hero { border-bottom:1.5px solid #cbd5e1; margin-bottom:1.2rem; padding:0 0 1rem; }
+  .hero-avatar { border-color:#94a3b8; box-shadow:none; }
+  .hero-role, .about-text, .project-desc, .exp-list li, .cert-name { color:#334155; }
+  .hero-eyebrow, .section-label, .cert-group-head i, .cert-group-label, .card-title i,
+  .hero-role i, .contact-bar i { color:#0e7490 !important; }
+  .stat-num, .exp-role, .card-title, .project-title, .cert-group-head { color:#0f172a; }
+  .terminal { background:#f1f5f9; border-color:#cbd5e1; color:#334155; }
+  .terminal .cmd, .terminal .prompt { color:#0e7490; }
+
+  /* Cards flatten to bordered blocks; keep them whole across pages */
+  .card, .project-card, .cert-group {
+    background:#fff !important; border:1px solid #cbd5e1 !important;
+    box-shadow:none !important; transform:none !important; break-inside:avoid;
+  }
+  .project-card::before { display:none; }
+  .grid { display:block; }
+  aside, main { display:block; }
+  .card+.card, .project-card { margin-bottom:.8rem; }
+  .projects { gap:.8rem; }
+  .certs-section { margin-top:1.2rem; break-inside:avoid; }
+  .certs-grid { gap:.7rem; }
+
+  /* Tags and chips: light ink, printable */
+  .tag, .chip, .tech { border-color:#cbd5e1 !important; }
+  .tag-year { color:#64748b; }
+  .cert-name small { color:#0e7490; border-color:#0e7490; }
+  a { color:#0e7490; }
+
+  /* Don't waste a page on the Credly badge thumbnails */
+  .badges-grid { display:none; }
+  .btn-primary { background:#0e7490; box-shadow:none; }
+  .footer { border-top:1px solid #cbd5e1; margin-top:1.5rem; }
+  .footer-credit, .footer-link { color:#475569; }
+  .print-hide { display:none !important; }
 }
 </style>
 </head>
@@ -366,15 +435,21 @@ h1 {
 
   <!-- ── HERO ─────────────────────────────────────── -->
   <header class="hero reveal">
-    <p class="hero-eyebrow" aria-label="Portfolio 2026">Portfolio · 2026</p>
-    <h1>Hugo Herrera</h1>
-    <p class="hero-role">
-      <i class="fas fa-network-wired" aria-hidden="true"></i>
-      Networking &amp; Telecommunications
-      <span class="sep" aria-hidden="true">·</span>
-      <i class="fas fa-shield-alt" aria-hidden="true"></i>
-      Cybersecurity
-    </p>
+    <div class="hero-top">
+      <div class="hero-intro">
+        <p class="hero-eyebrow" aria-label="Portfolio 2026">Portfolio · 2026</p>
+        <h1>Hugo Herrera</h1>
+        <p class="hero-role">
+          <i class="fas fa-network-wired" aria-hidden="true"></i>
+          Networking &amp; Telecommunications
+          <span class="sep" aria-hidden="true">·</span>
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          Cybersecurity
+        </p>
+      </div>
+      <img class="hero-avatar" src="avatar.jpg" width="130" height="130"
+           alt="Hugo Herrera" loading="eager">
+    </div>
 
     <div class="terminal" aria-label="Specialization summary">
       <span class="prompt" aria-hidden="true">→</span>
@@ -397,6 +472,10 @@ h1 {
       <a href="https://linkedin.com/in/hugo-herrera-redes" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
         <i class="fab fa-linkedin" aria-hidden="true"></i>
         linkedin.com/in/hugo-herrera-redes
+      </a>
+      <a href="cv-hugo-herrera.pdf" download class="download-cv print-hide" aria-label="Download CV as PDF">
+        <i class="fas fa-file-arrow-down" aria-hidden="true"></i>
+        Download CV
       </a>
     </div>
 
@@ -444,14 +523,17 @@ h1 {
       <div class="card reveal">
         <p class="card-title"><i class="fas fa-user" aria-hidden="true"></i> About</p>
         <p class="about-text">
-          Interested in <strong>Network Engineering</strong>, <strong>SOC Operations</strong>,
-          <strong>Cloud Infrastructure</strong> and <strong>Security Automation</strong>.
+          Final-year <strong>Networking &amp; Telecommunications</strong> student at Duoc UC,
+          fresh off a <strong>180-hour internship</strong> deploying and securing network
+          infrastructure. I both build and break: from offline IoT systems to
+          <strong>web-app penetration tests</strong>. CCNP- and CyberOps-trained, comfortable
+          from the cabling rack up to the SOC.
         </p>
-        <div class="chips" style="gap:.4rem" role="list" aria-label="Specialties">
-          <span class="chip chip-amber"  style="font-size:.65rem" role="listitem">SOC Operations</span>
+        <div class="chips" style="gap:.4rem" role="list" aria-label="Focus areas">
           <span class="chip chip-cyan"   style="font-size:.65rem" role="listitem">Network Engineering</span>
+          <span class="chip chip-amber"  style="font-size:.65rem" role="listitem">SOC Operations</span>
+          <span class="chip chip-purple" style="font-size:.65rem" role="listitem">Pentesting</span>
           <span class="chip chip-blue"   style="font-size:.65rem" role="listitem">Cloud Infrastructure</span>
-          <span class="chip chip-purple" style="font-size:.65rem" role="listitem">Security Automation</span>
           <span class="chip chip-green"  style="font-size:.65rem" role="listitem">Linux</span>
           <span class="chip chip-aws"    style="font-size:.65rem" role="listitem">Python</span>
         </div>
@@ -490,192 +572,6 @@ h1 {
             internship. CCNA, CCNP Enterprise, CyberOps and DevNet completed on-site with
             an instructor — each approved with top marks at the academy.
           </p>
-        </div>
-      </div>
-
-      <!-- Certifications -->
-      <div class="card reveal">
-        <p class="card-title"><i class="fas fa-certificate" aria-hidden="true"></i> Certifications</p>
-
-        <p class="cert-group-label">Cybersecurity</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Cybersecurity Defense Analyst Career Path <small>Exam</small></span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 01, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Junior Cybersecurity Analyst Career Path <small>Exam</small></span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Endpoint Security</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 30, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Ethical Hacker</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Network Security</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 29, 2025</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CyberOps Associate</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">2023</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Introduction to Cybersecurity</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Ethical Hacking &amp; Cybersecurity Management</span>
-          <span class="tag tag-year">DUOC UC · 2025</span>
-        </div>
-
-        <p class="cert-group-label">Networking &amp; IoT</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Network Technician Career Path <small>Exam</small></span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 01, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CCNP Enterprise: Advanced Routing</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · Mar 11, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CCNP Enterprise: Core Networking</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · Jun 25, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CCNA: Enterprise Networking, Security &amp; Automation</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · 2024</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CCNA: Routing &amp; Switching</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · 2023</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Introduction to IoT</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Oct 23, 2025</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Networking Basics</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Network Support and Security</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 30, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Network Addressing and Basic Troubleshooting</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 27, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Getting Started with Cisco Packet Tracer</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Mar 14, 2025</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Troubleshooting &amp; Maintaining Cisco IP Networks</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">2025</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Emerging IoT Technology Surveillance</span>
-          <span class="tag tag-year">DUOC UC · 2025</span>
-        </div>
-
-        <p class="cert-group-label">Data, Cloud &amp; AI</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Data Science Essentials with Python</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 01, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Artificial Intelligence Fundamentals</span>
-          <span class="tag tag-dev">IBM SkillsBuild</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot aws" aria-hidden="true"></div>
-          <span class="cert-name">AWS Academy Graduate — Cloud Foundations</span>
-          <span class="tag tag-aws">AWS</span>
-          <span class="tag tag-year">Nov 26, 2023</span>
-        </div>
-
-        <p class="cert-group-label">Automation &amp; Programming</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">DevNet Associate</span>
-          <span class="tag tag-dev">Cisco</span>
-          <span class="tag tag-year">DUOC UC · 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Python Essentials 1</span>
-          <span class="tag tag-dev">Cisco / OpenEDG</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Linux Essentials</span>
-          <span class="tag tag-dev">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
-        </div>
-
-        <p class="cert-group-label">Business &amp; Sustainability</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Managing a Business Venture</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 02, 2026</span>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Greenhouse Gas Accounting for IT</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 01, 2026</span>
-        </div>
-
-        <div class="cert-note">
-          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-          Cisco certs via <strong>Cisco Networking Academy</strong> · IBM cert via <strong>IBM SkillsBuild</strong> · Institutional certs from <strong>DUOC UC</strong>
         </div>
       </div>
 
@@ -918,67 +814,226 @@ h1 {
           </div>
         </article>
 
-        <!-- Honeypot -->
+        <!-- Roadmap -->
         <article class="project-card p-soon reveal">
           <div class="project-header">
             <h2 class="project-title">
-              <i class="fas fa-robot" aria-hidden="true"></i>
-              AI-Powered Honeypot
+              <i class="fas fa-flask" aria-hidden="true"></i>
+              On the bench
             </h2>
-            <span class="project-status s-soon" aria-label="In development">In development</span>
+            <span class="project-status s-soon" aria-label="Roadmap">Roadmap</span>
           </div>
           <p class="project-desc">
-            A <strong>distributed honeypot</strong> that simulates vulnerable services to attract
-            and study attackers. Uses <strong>machine learning</strong> to classify attack patterns,
-            map TTPs to MITRE ATT&amp;CK and generate real-time threat intelligence reports.
+            What I&#39;m building next: an <strong>AI-assisted honeypot</strong> that maps
+            attacker TTPs to MITRE ATT&amp;CK, and a <strong>LoRa + MQTT IoT mesh</strong> for
+            connectivity-free environmental monitoring. Repos go public as they take shape.
           </p>
           <div class="tech-row" role="list" aria-label="Technologies">
-            <span class="tech"      role="listitem">Python</span>
-            <span class="tech"      role="listitem">Machine Learning</span>
-            <span class="tech"      role="listitem">Elastic Stack</span>
-            <span class="tech"      role="listitem">Docker</span>
-            <span class="tech t-sec" role="listitem">MITRE ATT&CK</span>
-            <span class="tech t-sec" role="listitem">Threat Intelligence</span>
-          </div>
-          <div class="project-footer">
-            <span class="btn-soon" aria-label="Coming soon">
-              <i class="fas fa-code-branch" aria-hidden="true"></i> In development
-            </span>
-          </div>
-        </article>
-
-        <!-- IoT Mesh -->
-        <article class="project-card p-soon reveal">
-          <div class="project-header">
-            <h2 class="project-title">
-              <i class="fas fa-satellite-dish" aria-hidden="true"></i>
-              Autonomous IoT Mesh Network
-            </h2>
-            <span class="project-status s-soon" aria-label="In development">In development</span>
-          </div>
-          <p class="project-desc">
-            A self-reconfiguring IoT mesh network using <strong>LoRa + MQTT</strong> nodes with a
-            lightweight blockchain layer for data integrity. Designed for environmental monitoring
-            in remote areas with no internet connectivity — resilient by design.
-          </p>
-          <div class="tech-row" role="list" aria-label="Technologies">
-            <span class="tech"      role="listitem">ESP32</span>
-            <span class="tech"      role="listitem">LoRa</span>
-            <span class="tech"      role="listitem">MQTT</span>
-            <span class="tech"      role="listitem">Blockchain</span>
+            <span class="tech"       role="listitem">Python</span>
+            <span class="tech"       role="listitem">Machine Learning</span>
+            <span class="tech t-sec" role="listitem">MITRE ATT&amp;CK</span>
+            <span class="tech"       role="listitem">LoRa</span>
+            <span class="tech"       role="listitem">MQTT</span>
             <span class="tech t-sec" role="listitem">IoT Security</span>
-            <span class="tech t-dim" role="listitem">No internet required</span>
-          </div>
-          <div class="project-footer">
-            <span class="btn-soon" aria-label="Coming soon">
-              <i class="fas fa-code-branch" aria-hidden="true"></i> In development
-            </span>
           </div>
         </article>
 
       </div>
     </main>
   </div>
+
+
+  <!-- ── CERTIFICATIONS (full width) ──────────────── -->
+  <section class="certs-section" aria-label="Certifications">
+    <p class="section-label">Certifications · 28 verified</p>
+    <div class="certs-grid">
+      <div class="cert-group card reveal">
+        <p class="cert-group-head"><i class="fas fa-shield-halved" aria-hidden="true"></i> Cybersecurity</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Cybersecurity Defense Analyst Career Path <small>Exam</small></span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 01, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Junior Cybersecurity Analyst Career Path <small>Exam</small></span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Endpoint Security</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 30, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Ethical Hacker</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Network Security</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 29, 2025</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">CyberOps Associate</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">2023</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Introduction to Cybersecurity</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Ethical Hacking &amp; Cybersecurity Management</span>
+          <span class="tag tag-year">DUOC UC · 2025</span>
+        </div>
+      </div>
+      <div class="cert-group card reveal">
+        <p class="cert-group-head"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking &amp; IoT</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Network Technician Career Path <small>Exam</small></span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 01, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">CCNP Enterprise: Advanced Routing</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">DUOC UC · Mar 11, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">CCNP Enterprise: Core Networking</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">DUOC UC · Jun 25, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">CCNA: Enterprise Networking, Security &amp; Automation</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">DUOC UC · 2024</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">CCNA: Routing &amp; Switching</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">DUOC UC · 2023</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Introduction to IoT</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Oct 23, 2025</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Networking Basics</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Network Support and Security</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 30, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Network Addressing and Basic Troubleshooting</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 27, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Getting Started with Cisco Packet Tracer</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Mar 14, 2025</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Troubleshooting &amp; Maintaining Cisco IP Networks</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">2025</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Emerging IoT Technology Surveillance</span>
+          <span class="tag tag-year">DUOC UC · 2025</span>
+        </div>
+      </div>
+      <div class="cert-group card reveal">
+        <p class="cert-group-head"><i class="fas fa-cloud" aria-hidden="true"></i> Data, Cloud &amp; AI</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Data Science Essentials with Python</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 01, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Artificial Intelligence Fundamentals</span>
+          <span class="tag tag-dev">IBM SkillsBuild</span>
+          <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot aws" aria-hidden="true"></div>
+          <span class="cert-name">AWS Academy Graduate — Cloud Foundations</span>
+          <span class="tag tag-aws">AWS</span>
+          <span class="tag tag-year">Nov 26, 2023</span>
+        </div>
+      </div>
+      <div class="cert-group card reveal">
+        <p class="cert-group-head"><i class="fas fa-code" aria-hidden="true"></i> Automation &amp; Programming</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">DevNet Associate</span>
+          <span class="tag tag-dev">Cisco</span>
+          <span class="tag tag-year">DUOC UC · 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Python Essentials 1</span>
+          <span class="tag tag-dev">Cisco / OpenEDG</span>
+          <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Linux Essentials</span>
+          <span class="tag tag-dev">Cisco</span>
+          <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+      </div>
+      <div class="cert-group card reveal">
+        <p class="cert-group-head"><i class="fas fa-leaf" aria-hidden="true"></i> Business &amp; Sustainability</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Managing a Business Venture</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 02, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Greenhouse Gas Accounting for IT</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 01, 2026</span>
+        </div>
+      </div>
+    </div>
+    <p class="cert-note" style="margin-top:1.2rem;">
+      <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+      Cisco credentials via <strong>Cisco Networking Academy</strong> · IBM via <strong>IBM SkillsBuild</strong> · CCNA, CCNP, CyberOps &amp; DevNet taken on-site with an instructor at <strong>Duoc UC</strong>. All verifiable on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
+    </p>
+  </section>
 
   <!-- ── FOOTER ─────────────────────────────────── -->
   <footer class="footer reveal">
