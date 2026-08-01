@@ -20,7 +20,7 @@
 <meta property="og:image"       content="https://cv-hh.pages.dev/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="article:published_time" content="2026-06-30">
+<meta property="article:published_time" content="2026-08-01">
 
 <!-- Twitter Card -->
 <meta name="twitter:card"        content="summary_large_image">
@@ -211,6 +211,16 @@ h1 {
 .about-text { font-size:.9rem; color:var(--soft); line-height:1.75; margin-bottom:1rem; }
 .about-text strong { color:#34d399; font-weight:600; }
 
+/* Experience / Education */
+.exp-item + .exp-item { margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,.04); }
+.exp-head { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; flex-wrap:wrap; }
+.exp-role { font-size:.85rem; font-weight:600; color:var(--text); }
+.exp-org { font-size:.75rem; color:var(--muted); margin:.2rem 0 .5rem; }
+.exp-list { list-style:none; display:flex; flex-direction:column; gap:.4rem; }
+.exp-list li { position:relative; padding-left:1rem; font-size:.8rem; color:var(--soft); line-height:1.5; }
+.exp-list li::before { content:''; position:absolute; left:0; top:.55em; width:5px; height:5px; border-radius:50%; background:var(--purple); }
+.exp-list strong { color:#34d399; font-weight:600; }
+
 /* Certs */
 .cert-group-label { font-size:.63rem; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:1rem 0 .5rem; }
 .cert-group-label:first-child { margin-top:0; }
@@ -384,17 +394,17 @@ h1 {
 
     <div class="stats-bar" role="list" aria-label="Key highlights">
       <div class="stat" role="listitem">
-        <span class="stat-num">19<span>+</span></span>
+        <span class="stat-num">28</span>
         <span class="stat-label">Certifications</span>
       </div>
       <div class="stat-divider" aria-hidden="true"></div>
       <div class="stat" role="listitem">
-        <span class="stat-num">3</span>
+        <span class="stat-num">4</span>
         <span class="stat-label">Live projects</span>
       </div>
       <div class="stat-divider" aria-hidden="true"></div>
       <div class="stat" role="listitem">
-        <span class="stat-num">12</span>
+        <span class="stat-num">21</span>
         <span class="stat-label">Verified badges</span>
       </div>
       <div class="stat-divider" aria-hidden="true"></div>
@@ -439,6 +449,42 @@ h1 {
         </div>
       </div>
 
+      <!-- Experience -->
+      <div class="card reveal">
+        <p class="card-title"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</p>
+        <div class="exp-item">
+          <div class="exp-head">
+            <span class="exp-role">Computing Department Advisor</span>
+            <span class="tag tag-year">180 h · 2026</span>
+          </div>
+          <p class="exp-org">RH Rental Arriendo de Maquinarias SpA · Santiago, Chile</p>
+          <ul class="exp-list">
+            <li>Deployed and configured network infrastructure: routers, switches and wireless access points.</li>
+            <li>Monitored and diagnosed the network for early fault detection and resolution.</li>
+            <li>Built structured cabling and organized communication racks to standard.</li>
+            <li>Applied security policies: perimeter controls, access control, credentials and firewall management.</li>
+            <li>Delivered <strong>Tier 1 &amp; Tier 2 support</strong> for connectivity, web and email incidents.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="card reveal">
+        <p class="card-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</p>
+        <div class="exp-item">
+          <div class="exp-head">
+            <span class="exp-role">Networking &amp; Telecommunications Engineering</span>
+            <span class="tag tag-year">8th sem.</span>
+          </div>
+          <p class="exp-org">Duoc UC, sede Maipú · Santiago, Chile</p>
+          <p class="about-text" style="margin:.5rem 0 0;font-size:.82rem;">
+            Final semester in progress. Remaining: Capstone project and professional
+            internship. CCNA, CCNP Enterprise, CyberOps and DevNet completed on-site with
+            an instructor — each approved with top marks at the academy.
+          </p>
+        </div>
+      </div>
+
       <!-- Certifications -->
       <div class="card reveal">
         <p class="card-title"><i class="fas fa-certificate" aria-hidden="true"></i> Certifications</p>
@@ -446,9 +492,21 @@ h1 {
         <p class="cert-group-label">Cybersecurity</p>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Junior Cybersecurity Analyst Career Path</span>
+          <span class="cert-name">Cybersecurity Defense Analyst Career Path <small>Exam</small></span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 01, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Junior Cybersecurity Analyst Career Path <small>Exam</small></span>
           <span class="tag tag-cisco">Cisco</span>
           <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Endpoint Security</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 30, 2026</span>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
@@ -483,15 +541,21 @@ h1 {
         <p class="cert-group-label">Networking &amp; IoT</p>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Network Technician Career Path <small>Exam</small></span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 01, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">CCNP Enterprise: Advanced Routing</span>
           <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · Jun 11, 2026</span>
+          <span class="tag tag-year">DUOC UC · Mar 11, 2026</span>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">CCNP Enterprise: Core Networking</span>
           <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · Mar 25, 2026</span>
+          <span class="tag tag-year">DUOC UC · Jun 25, 2026</span>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
@@ -519,6 +583,24 @@ h1 {
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Network Support and Security</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 30, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Network Addressing and Basic Troubleshooting</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jun 27, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Getting Started with Cisco Packet Tracer</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Mar 14, 2025</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Troubleshooting &amp; Maintaining Cisco IP Networks</span>
           <span class="tag tag-cisco">Cisco</span>
           <span class="tag tag-year">2025</span>
@@ -529,7 +611,13 @@ h1 {
           <span class="tag tag-year">DUOC UC · 2025</span>
         </div>
 
-        <p class="cert-group-label">Cloud &amp; AI</p>
+        <p class="cert-group-label">Data, Cloud &amp; AI</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Data Science Essentials with Python</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 01, 2026</span>
+        </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Artificial Intelligence Fundamentals</span>
@@ -561,6 +649,20 @@ h1 {
           <span class="cert-name">Linux Essentials</span>
           <span class="tag tag-dev">Cisco</span>
           <span class="tag tag-year">Jun 26, 2026</span>
+        </div>
+
+        <p class="cert-group-label">Business &amp; Sustainability</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Managing a Business Venture</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 02, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Greenhouse Gas Accounting for IT</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Jul 01, 2026</span>
         </div>
 
         <div class="cert-note">
@@ -660,7 +762,7 @@ h1 {
 
         </div>
         <p style="font-size:.7rem;color:var(--muted);margin-top:.85rem;font-family:var(--font-mono);">
-          + 4 more verified badges on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
+          See all verified badges on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
         </p>
       </div>
 
@@ -767,6 +869,42 @@ h1 {
                target="_blank" rel="noopener noreferrer"
                class="btn btn-primary"
                aria-label="View CyberOps SOC Lab on GitHub (opens in new tab)">
+              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- Flask Security Audit -->
+        <article class="project-card p-live reveal">
+          <div class="project-header">
+            <h2 class="project-title">
+              <i class="fas fa-shield-halved" aria-hidden="true"></i>
+              Flask Web App Security Audit
+            </h2>
+            <span class="project-status s-live" aria-label="Live project">Live ↗</span>
+          </div>
+          <p class="project-desc">
+            Full <strong>penetration test</strong> of a deliberately vulnerable Flask app:
+            five findings — Command Injection, Reflected XSS, CSRF, SQL Injection and an
+            exposed debug console (RCE) — each located in source, proven with an
+            <strong>OWASP ZAP scan of 999 requests</strong> plus manual exploits, and shipped
+            with its own remediation. Every attack was run and verified to fire against the
+            target and to be blocked against the hardened version.
+          </p>
+          <div class="tech-row" role="list" aria-label="Technologies">
+            <span class="tech t-sec" role="listitem">OWASP ZAP</span>
+            <span class="tech t-sec" role="listitem">Burp Suite</span>
+            <span class="tech t-sec" role="listitem">OWASP Top 10</span>
+            <span class="tech"       role="listitem">Python</span>
+            <span class="tech"       role="listitem">Flask</span>
+            <span class="tech"       role="listitem">SQLite</span>
+            <span class="tech t-oss" role="listitem">Open Source</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/hu-herrera/flask-security-audit"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               aria-label="View Flask Web App Security Audit on GitHub (opens in new tab)">
               <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
             </a>
           </div>
