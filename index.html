@@ -812,6 +812,44 @@ h1 {
           </div>
         </article>
 
+        <!-- RivalScope -->
+        <article class="project-card p-live reveal">
+          <div class="project-header">
+            <h2 class="project-title">
+              <i class="fas fa-crosshairs" aria-hidden="true"></i>
+              RivalScope — Real-Time Battle Analysis
+            </h2>
+            <span class="project-status s-live" aria-label="Live project">Live ↗</span>
+          </div>
+          <p class="project-desc">
+            Desktop app that reads an ongoing match off the screen and recommends a counter-play.
+            A <strong>screen-capture overlay</strong> with selectable region and monitor feeds a
+            <strong>battle simulation engine</strong> modelling damage, speed, priority, status,
+            weather, entry hazards, items and abilities. Validated against real usage data:
+            move typing now resolves from the dataset for all <strong>394 moves</strong> in
+            rotation, replacing a hand-written table that covered 108. Analysis runs off the
+            UI thread, ships with <strong>28 test modules</strong> and a CI pipeline that
+            verifies a clean-machine install.
+          </p>
+          <div class="tech-row" role="list" aria-label="Technologies">
+            <span class="tech"       role="listitem">Python</span>
+            <span class="tech"       role="listitem">PySide6 / Qt</span>
+            <span class="tech"       role="listitem">SQLite</span>
+            <span class="tech t-grn" role="listitem">OpenCV / OCR</span>
+            <span class="tech t-grn" role="listitem">Simulation Engine</span>
+            <span class="tech t-sec" role="listitem">CI / GitHub Actions</span>
+            <span class="tech t-sec" role="listitem">Unit Testing</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/hu-herrera/RivalScope"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               aria-label="View RivalScope on GitHub (opens in new tab)">
+              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+            </a>
+          </div>
+        </article>
+
         <!-- Roadmap -->
         <article class="project-card p-soon reveal">
           <div class="project-header">
