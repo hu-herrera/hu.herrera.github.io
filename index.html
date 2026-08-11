@@ -833,21 +833,21 @@ h1 {
             <span class="project-status s-wip" aria-label="Work in progress">In development</span>
           </div>
           <p class="project-desc">
-            Competitive analytics app designed to help newcomer players enter competitive play and win with their favorite Pokémon without needing prior meta expertise.
-            Its primary functional feature is the <strong>Interactive Team Builder</strong>: users configure their preferred Pokémon (EVs, IVs, moves, items), and the recommendation engine calculates optimal stat and move adjustments so their team can compete and win against the meta.
-            Additionally, the <strong>Team Preview Assistant</strong> uses screen capture &amp; visual matching (sprites via OpenCV) to detect the opponent's roster at selection screen and instruct which 3 or 4 Pokémon from the user's team to bring into battle.
+            Competitive desktop app (PySide6/Qt) designed to help newcomer players build competitive teams with their favorite Pokémon to beat the meta.
+            Its core feature is an <strong>Interactive Manual Team Builder</strong>: players search Pokémon from a 315-species catalog and manually configure custom builds (EV/IV distributions with 66-point allocations, valid movepool selections, items, and abilities) with usage trend guidance. Includes dynamic <strong>Mega-Evolution toggling</strong> (75 forms) recalculating base stats in real time.
+            The app runs a deep <strong>Synergy &amp; Gap Analysis Engine</strong> that diagnoses team weaknesses, coverage flaws, and stat synergies. At match start, the <strong>Team Preview Assistant</strong> uses screen capture &amp; sprite matching (OpenCV) to identify the opponent's roster and instruct which Pokémon from the user's team to bring into battle.
           </p>
           <p class="project-desc">
-            <strong>Status:</strong> The Team Builder and Core Simulation Engine (modelling damage, priority, speed, weather across 394 moves) are fully functional and backed by 28 test modules and an automated GitHub Actions CI pipeline. In-game battle HUD recommendations are currently under active development.
+            <strong>Status:</strong> The Team Builder, Synergy Analyzer, Mega-Evolution engine, movepool validator, and SQLite database (+390 moves/stats) are fully functional and backed by 449 unit tests and a GitHub Actions CI pipeline. Real-time in-game battle HUD recommendations are under active development.
           </p>
           <div class="tech-row" role="list" aria-label="Technologies">
             <span class="tech"       role="listitem">Python</span>
-            <span class="tech"       role="listitem">PySide6 / Qt</span>
+            <span class="tech"       role="listitem">PySide6 / Qt6</span>
             <span class="tech"       role="listitem">SQLite</span>
-            <span class="tech t-grn" role="listitem">Team Builder Engine</span>
-            <span class="tech t-grn" role="listitem">OpenCV / Visual Matching</span>
+            <span class="tech t-grn" role="listitem">Synergy Analyzer</span>
+            <span class="tech t-grn" role="listitem">OpenCV / Sprite Matching</span>
             <span class="tech t-sec" role="listitem">CI / GitHub Actions</span>
-            <span class="tech t-sec" role="listitem">Unit Testing</span>
+            <span class="tech t-sec" role="listitem">Unit Testing (449 Tests)</span>
           </div>
           <div class="project-footer">
             <a href="https://github.com/hu-herrera/RivalScope"
