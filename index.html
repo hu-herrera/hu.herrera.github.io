@@ -693,11 +693,12 @@ h1 {
             <span class="project-status s-green" aria-label="Live project">Live ↗</span>
           </div>
           <p class="project-desc">
-            Native C++20 Linux CLI tool to re-enable and synchronize <strong>Hardcore mode (Player &amp; Pals permadeath)</strong>
-            on Palworld single-player worlds when the in-game toggle becomes locked.
-            Features custom binary save container decoding/encoding for <strong>PlM1 (Oodle/Kraken) and PlZ (zlib)</strong> formats,
-            automatic detection of Steam, Steam Deck, Proton, and Flatpak save paths, timestamped backups before modification,
-            and JSON output mode for automation.
+            Native C++20 Linux CLI tool built to recover lost worlds due to Early Access game bugs and save lockouts.
+            When a player loses a Hardcore world to an unfair glitch (e.g., getting hit through walls or geometry bugs),
+            the in-game setting permanently locks itself. This tool performs binary reverse engineering on <strong>PlM1 (Oodle/Kraken) and PlZ (zlib)</strong>
+            save containers, decompressing and editing the internal <code>bHardcore</code> &amp; <code>bPalLost</code> flags to restore or re-synchronize
+            permadeath status. Features automatic detection of Steam, Steam Deck, Proton, and Flatpak save paths, safety backups before editing,
+            and JSON mode for scripting.
           </p>
           <div class="tech-row" role="list" aria-label="Technologies">
             <span class="tech t-grn" role="listitem">C++20</span>
@@ -832,17 +833,11 @@ h1 {
             <span class="project-status s-wip" aria-label="Work in progress">In development</span>
           </div>
           <p class="project-desc">
-            Desktop app that reads an ongoing match off the screen and recommends a counter-play.
-            The piece I'm proudest of is the <strong>analysis system</strong>: it doesn't just name
-            a threat, it tells you how to make the team you actually like competitive against the
-            meta — which spread, item and moves to change, and what each swap buys you.
-            Underneath it sits a <strong>battle simulation engine</strong> modelling damage, speed,
-            priority, status, weather, entry hazards, items and abilities, fed by a
-            <strong>screen-capture overlay</strong> with selectable region and monitor.
-            Move typing resolves from the dataset for all <strong>394 moves</strong> in rotation,
-            replacing a hand-written table that covered 108. Analysis runs off the UI thread and
-            ships with <strong>28 test modules</strong> plus a CI pipeline verifying a clean-machine
-            install.
+            Real-time battle assistant designed to help players enter competitive play and win with their favorite Pokémon, without needing prior meta expertise.
+            Unlike tools that force generic meta teams, its core <strong>recommendation engine</strong> analyzes on-screen threats via computer vision (OpenCV OCR)
+            and calculates exact adjustments (ev spreads, items, move swaps) to make the user's preferred team competitive against the meta.
+            Underneath sits a <strong>battle simulation engine</strong> modelling damage, priority, speed, weather, and abilities across <strong>394 moves</strong>,
+            running asynchronously on a PySide6/Qt multi-threaded GUI with 28 test modules and automated CI.
           </p>
           <p class="project-desc">
             <strong>Status:</strong> the engine and the analysis core are solid and well covered by
