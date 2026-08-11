@@ -305,6 +305,7 @@ h1 {
 
 .project-card.p-live::before  { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,#10b981,#14b8a6); }
 .project-card.p-green::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--green),var(--cyan)); }
+.project-card.p-wip::before   { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,#f59e0b,#fbbf24); }
 .project-card.p-soon::before  { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,rgba(100,116,139,.3),transparent); }
 
 .project-header { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:.75rem; }
@@ -316,6 +317,7 @@ h1 {
 .project-status { font-family:var(--font-mono); font-size:.58rem; font-weight:700; padding:.2rem .6rem; border-radius:4px; text-transform:uppercase; letter-spacing:.06em; white-space:nowrap; flex-shrink:0; }
 .s-live  { background:rgba(16,185,129,.2); color:#34d399; border:1px solid rgba(16,185,129,.25); }
 .s-green { background:rgba(34,197,94,.15);  color:#86efac; border:1px solid rgba(34,197,94,.2); }
+.s-wip   { background:rgba(245,158,11,.15);  color:#fbbf24; border:1px solid rgba(245,158,11,.25); }
 .s-soon  { background:rgba(100,116,139,.12); color:var(--muted); border:1px solid rgba(100,116,139,.15); }
 
 .project-desc { font-size:.875rem; color:var(--soft); line-height:1.7; margin-bottom:.85rem; }
@@ -675,6 +677,41 @@ h1 {
       <p class="section-label">Projects</p>
       <div class="projects">
 
+        <!-- Palworld Hardcore CLI -->
+        <article class="project-card p-green reveal">
+          <div class="project-header">
+            <h2 class="project-title">
+              <i class="fas fa-terminal i-green" aria-hidden="true"></i>
+              Palworld Hardcore CLI
+            </h2>
+            <span class="project-status s-green" aria-label="Live project">Live ↗</span>
+          </div>
+          <p class="project-desc">
+            Native C++20 Linux CLI tool to re-enable and synchronize <strong>Hardcore mode (Player &amp; Pals permadeath)</strong>
+            on Palworld single-player worlds when the in-game toggle becomes locked.
+            Features custom binary save container decoding/encoding for <strong>PlM1 (Oodle/Kraken) and PlZ (zlib)</strong> formats,
+            automatic detection of Steam, Steam Deck, Proton, and Flatpak save paths, timestamped backups before modification,
+            and JSON output mode for automation.
+          </p>
+          <div class="tech-row" role="list" aria-label="Technologies">
+            <span class="tech t-grn" role="listitem">C++20</span>
+            <span class="tech t-sec" role="listitem">Reverse Engineering</span>
+            <span class="tech t-sec" role="listitem">Oodle / Kraken</span>
+            <span class="tech"       role="listitem">zlib</span>
+            <span class="tech"       role="listitem">Linux / Steam Deck</span>
+            <span class="tech t-oss" role="listitem">Open Source</span>
+            <span class="tech t-sec" role="listitem">Proton / Steam</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/hu-herrera/palworld-hardcore-cli"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               aria-label="View Palworld Hardcore CLI on GitHub (opens in new tab)">
+              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+            </a>
+          </div>
+        </article>
+
         <!-- Riego -->
         <article class="project-card p-green reveal">
           <div class="project-header">
@@ -780,23 +817,32 @@ h1 {
         </article>
 
         <!-- RivalScope -->
-        <article class="project-card p-live reveal">
+        <article class="project-card p-wip reveal">
           <div class="project-header">
             <h2 class="project-title">
               <i class="fas fa-crosshairs" aria-hidden="true"></i>
               RivalScope — Real-Time Battle Analysis
             </h2>
-            <span class="project-status s-live" aria-label="Live project">Live ↗</span>
+            <span class="project-status s-wip" aria-label="Work in progress">In development</span>
           </div>
           <p class="project-desc">
             Desktop app that reads an ongoing match off the screen and recommends a counter-play.
-            A <strong>screen-capture overlay</strong> with selectable region and monitor feeds a
-            <strong>battle simulation engine</strong> modelling damage, speed, priority, status,
-            weather, entry hazards, items and abilities. Validated against real usage data:
-            move typing now resolves from the dataset for all <strong>394 moves</strong> in
-            rotation, replacing a hand-written table that covered 108. Analysis runs off the
-            UI thread, ships with <strong>28 test modules</strong> and a CI pipeline that
-            verifies a clean-machine install.
+            The piece I'm proudest of is the <strong>analysis system</strong>: it doesn't just name
+            a threat, it tells you how to make the team you actually like competitive against the
+            meta — which spread, item and moves to change, and what each swap buys you.
+            Underneath it sits a <strong>battle simulation engine</strong> modelling damage, speed,
+            priority, status, weather, entry hazards, items and abilities, fed by a
+            <strong>screen-capture overlay</strong> with selectable region and monitor.
+            Move typing resolves from the dataset for all <strong>394 moves</strong> in rotation,
+            replacing a hand-written table that covered 108. Analysis runs off the UI thread and
+            ships with <strong>28 test modules</strong> plus a CI pipeline verifying a clean-machine
+            install.
+          </p>
+          <p class="project-desc">
+            <strong>Status:</strong> the engine and the analysis core are solid and well covered by
+            tests. What's still in progress is end-to-end validation — capture accuracy across
+            setups and real-match reliability — so treat it as a work in progress rather than a
+            finished release.
           </p>
           <div class="tech-row" role="list" aria-label="Technologies">
             <span class="tech"       role="listitem">Python</span>
@@ -848,10 +894,16 @@ h1 {
 
   <!-- ── CERTIFICATIONS (full width) ──────────────── -->
   <section class="certs-section" aria-label="Certifications">
-    <p class="section-label">Certifications · 28 verified</p>
+    <p class="section-label">Certifications · 32 verified</p>
     <div class="certs-grid">
       <div class="cert-group card reveal">
         <p class="cert-group-head"><i class="fas fa-shield-halved" aria-hidden="true"></i> Cybersecurity</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">Respuesta a Incidentes y Taxonomía en Ciberseguridad</span>
+          <span class="tag tag-sec">ANCI Chile</span>
+          <span class="tag tag-year">Ago 10, 2026</span>
+        </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Cybersecurity Defense Analyst Career Path <small>Exam</small></span>
@@ -978,6 +1030,12 @@ h1 {
         <p class="cert-group-head"><i class="fas fa-cloud" aria-hidden="true"></i> Data, Cloud &amp; AI</p>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">IA y Responsabilidad: Creación de una IA Positiva</span>
+          <span class="tag tag-dev">Santander / LinkedIn</span>
+          <span class="tag tag-year">Jul 28, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Data Science Essentials with Python</span>
           <span class="tag tag-cisco">Cisco</span>
           <span class="tag tag-year">Jul 01, 2026</span>
@@ -997,6 +1055,18 @@ h1 {
       </div>
       <div class="cert-group card reveal">
         <p class="cert-group-head"><i class="fas fa-code" aria-hidden="true"></i> Automation &amp; Programming</p>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">C++ Essentials 1</span>
+          <span class="tag tag-cisco">Cisco / OpenEDG</span>
+          <span class="tag tag-year">Ago 10, 2026</span>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot done" aria-hidden="true"></div>
+          <span class="cert-name">HTML Essentials</span>
+          <span class="tag tag-cisco">Cisco</span>
+          <span class="tag tag-year">Ago 08, 2026</span>
+        </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">DevNet Associate</span>
@@ -1034,7 +1104,7 @@ h1 {
     </div>
     <p class="cert-note" style="margin-top:1.2rem;">
       <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-      Cisco credentials via <strong>Cisco Networking Academy</strong> · IBM via <strong>IBM SkillsBuild</strong> · CCNA, CCNP, CyberOps &amp; DevNet taken on-site with an instructor at <strong>Duoc UC</strong>. All verifiable on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
+      Cisco credentials via <strong>Cisco Networking Academy</strong> · ANCI via <strong>Agencia Nacional de Ciberseguridad</strong> · IBM via <strong>IBM SkillsBuild</strong> · CCNA, CCNP, CyberOps &amp; DevNet taken on-site with an instructor at <strong>Duoc UC</strong>. Verified on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
     </p>
   </section>
 
