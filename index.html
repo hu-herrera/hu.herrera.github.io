@@ -252,21 +252,26 @@ h1 {
 .cert-group-head { font-size:.82rem; font-weight:700; color:var(--text); display:flex; align-items:center; gap:.55rem; margin-bottom:.85rem; padding-bottom:.7rem; border-bottom:1px solid var(--border); letter-spacing:.01em; }
 .cert-group-head i { color:var(--cyan); width:16px; text-align:center; }
 
-.cert-item { display:flex; align-items:baseline; gap:.55rem; padding:.32rem 0; font-size:.82rem; }
+.cert-item { display:flex; align-items:center; gap:.5rem; padding:.4rem 0; font-size:.82rem; flex-wrap:wrap; border-bottom:1px solid rgba(255,255,255,0.03); }
+.cert-item:last-child { border-bottom:none; }
 
-.cert-dot { width:5px; height:5px; border-radius:50%; background:var(--purple); align-self:center; flex-shrink:0; box-shadow:0 0 0 3px rgba(16,185,129,.08); }
+.cert-dot { width:6px; height:6px; border-radius:50%; background:var(--purple); flex-shrink:0; box-shadow:0 0 0 3px rgba(16,185,129,.08); }
 .cert-dot.done { background:var(--green); box-shadow:0 0 0 3px rgba(34,197,94,.08); }
 .cert-dot.aws  { background:var(--aws);  box-shadow:0 0 0 3px rgba(255,153,0,.1); }
 
-.cert-name { color:var(--text); flex:1; line-height:1.45; }
+.cert-name { color:var(--text); flex:1 1 180px; min-width:0; line-height:1.4; word-break:break-word; }
 .cert-name small { display:inline-block; color:var(--cyan); font-family:var(--font-mono); font-size:.6rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.05rem .3rem; margin-left:.4rem; border:1px solid rgba(0,180,216,.25); border-radius:3px; vertical-align:middle; }
 
-.tag { font-size:.58rem; font-weight:700; padding:.15rem .5rem; border-radius:4px; white-space:nowrap; font-family:var(--font-mono); }
-.tag-cisco { background:rgba(0,180,216,.12); color:var(--cyan);  border:1px solid rgba(0,180,216,.15); }
-.tag-ms    { background:rgba(0,164,239,.12); color:#60a5fa;      border:1px solid rgba(0,164,239,.2); }
-.tag-aws   { background:rgba(255,153,0,.12); color:#ffb84d;      border:1px solid rgba(255,153,0,.15); }
-.tag-dev   { background:rgba(59,130,246,.12);color:#93c5fd;      border:1px solid rgba(59,130,246,.15); }
-.tag-year  { background:transparent; color:var(--muted); border:1px solid transparent; font-variant-numeric:tabular-nums; letter-spacing:.02em; }
+.cert-tags { display:flex; align-items:center; gap:.35rem; margin-left:auto; flex-shrink:0; flex-wrap:nowrap; }
+
+.tag { font-size:.58rem; font-weight:700; padding:.18rem .5rem; border-radius:4px; white-space:nowrap; font-family:var(--font-mono); }
+.tag-cisco { background:rgba(0,180,216,.12); color:var(--cyan);  border:1px solid rgba(0,180,216,.2); }
+.tag-ms    { background:rgba(0,164,239,.12); color:#60a5fa;      border:1px solid rgba(0,164,239,.25); }
+.tag-aws   { background:rgba(255,153,0,.12); color:#ffb84d;      border:1px solid rgba(255,153,0,.2); }
+.tag-dev   { background:rgba(59,130,246,.12);color:#93c5fd;      border:1px solid rgba(59,130,246,.2); }
+.tag-anci  { background:rgba(239,68,68,.12); color:#f87171;      border:1px solid rgba(239,68,68,.25); }
+.tag-duoc  { background:rgba(245,158,11,.12); color:#fbbf24;     border:1px solid rgba(245,158,11,.25); }
+.tag-year  { background:rgba(255,255,255,.04); color:var(--soft); border:1px solid rgba(255,255,255,.08); font-variant-numeric:tabular-nums; letter-spacing:.02em; }
 
 .cert-note { margin-top:.75rem; padding:.6rem .75rem; background:rgba(0,180,216,.05); border-radius:8px; border:1px solid rgba(0,180,216,.08); font-size:.75rem; line-height:1.5; color:var(--muted); display:flex; align-items:flex-start; gap:.5rem; flex-wrap:wrap; }
 .cert-note i { color:var(--cyan); }
@@ -902,55 +907,74 @@ h1 {
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Respuesta a Incidentes y Taxonomía en Ciberseguridad</span>
-          <span class="tag tag-sec">ANCI Chile</span>
-          <span class="tag tag-year">Ago 10, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-anci">ANCI Chile</span>
+            <span class="tag tag-year">Ago 10, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Cybersecurity Defense Analyst Career Path <small>Exam</small></span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 01, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jul 01, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Junior Cybersecurity Analyst Career Path <small>Exam</small></span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 26, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Endpoint Security</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 30, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 30, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Ethical Hacker</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 26, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Network Security</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 29, 2025</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 29, 2025</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">CyberOps Associate</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">2023</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">2023</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Introduction to Cybersecurity</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 26, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Ethical Hacking &amp; Cybersecurity Management</span>
-          <span class="tag tag-year">DUOC UC · 2025</span>
+          <div class="cert-tags">
+            <span class="tag tag-duoc">Duoc UC</span>
+            <span class="tag tag-year">2025</span>
+          </div>
         </div>
       </div>
       <div class="cert-group card reveal">
@@ -958,79 +982,106 @@ h1 {
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Diseño e Implementación de Redes Híbridas (Azure VNets)</span>
-          <span class="tag tag-ms">Microsoft</span>
-          <span class="tag tag-year">Ago 11, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-ms">Microsoft</span>
+            <span class="tag tag-year">Ago 11, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Network Technician Career Path <small>Exam</small></span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 01, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jul 01, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">CCNP Enterprise: Advanced Routing</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · Mar 11, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-duoc">Duoc UC</span>
+            <span class="tag tag-year">Mar 11, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">CCNP Enterprise: Core Networking</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · Jun 25, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-duoc">Duoc UC</span>
+            <span class="tag tag-year">Jun 25, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">CCNA: Enterprise Networking, Security &amp; Automation</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · 2024</span>
+          <div class="cert-tags">
+            <span class="tag tag-duoc">Duoc UC</span>
+            <span class="tag tag-year">2024</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">CCNA: Routing &amp; Switching</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">DUOC UC · 2023</span>
+          <div class="cert-tags">
+            <span class="tag tag-duoc">Duoc UC</span>
+            <span class="tag tag-year">2023</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Introduction to IoT</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Oct 23, 2025</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Oct 23, 2025</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Networking Basics</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 26, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Network Support and Security</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 30, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 30, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Network Addressing and Basic Troubleshooting</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jun 27, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 27, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Getting Started with Cisco Packet Tracer</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Mar 14, 2025</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Mar 14, 2025</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Troubleshooting &amp; Maintaining Cisco IP Networks</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">2025</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">2025</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Emerging IoT Technology Surveillance</span>
-          <span class="tag tag-year">DUOC UC · 2025</span>
+          <div class="cert-tags">
+            <span class="tag tag-duoc">Duoc UC</span>
+            <span class="tag tag-year">2025</span>
+          </div>
         </div>
       </div>
       <div class="cert-group card reveal">
@@ -1038,44 +1089,58 @@ h1 {
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Orquestación Multiagente &amp; Servidores MCP (Microsoft Agent Framework)</span>
-          <span class="tag tag-ms">Microsoft</span>
-          <span class="tag tag-year">Ago 07, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-ms">Microsoft</span>
+            <span class="tag tag-year">Ago 07, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Desarrollo de Agentes de Voz en Tiempo Real &amp; Speech AI</span>
-          <span class="tag tag-ms">Microsoft</span>
-          <span class="tag tag-year">Ago 07, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-ms">Microsoft</span>
+            <span class="tag tag-year">Ago 07, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Minería de Conocimiento &amp; RAG (Foundry IQ &amp; Azure AI Search)</span>
-          <span class="tag tag-ms">Microsoft</span>
-          <span class="tag tag-year">Ago 07, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-ms">Microsoft</span>
+            <span class="tag tag-year">Ago 07, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">IA y Responsabilidad: Creación de una IA Positiva</span>
-          <span class="tag tag-dev">Santander / LinkedIn</span>
-          <span class="tag tag-year">Jul 28, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-dev">Santander</span>
+            <span class="tag tag-year">Jul 28, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Data Science Essentials with Python</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 01, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jul 01, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Artificial Intelligence Fundamentals</span>
-          <span class="tag tag-dev">IBM SkillsBuild</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-dev">IBM</span>
+            <span class="tag tag-year">Jun 26, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot aws" aria-hidden="true"></div>
           <span class="cert-name">AWS Academy Graduate — Cloud Foundations</span>
-          <span class="tag tag-aws">AWS</span>
-          <span class="tag tag-year">Nov 26, 2023</span>
+          <div class="cert-tags">
+            <span class="tag tag-aws">AWS</span>
+            <span class="tag tag-year">Nov 26, 2023</span>
+          </div>
         </div>
       </div>
       <div class="cert-group card reveal">
@@ -1083,32 +1148,42 @@ h1 {
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">C++ Essentials 1</span>
-          <span class="tag tag-cisco">Cisco / OpenEDG</span>
-          <span class="tag tag-year">Ago 10, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Ago 10, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">HTML Essentials</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Ago 08, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Ago 08, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">DevNet Associate</span>
-          <span class="tag tag-dev">Cisco</span>
-          <span class="tag tag-year">DUOC UC · 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-duoc">Duoc UC</span>
+            <span class="tag tag-year">2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Python Essentials 1</span>
-          <span class="tag tag-dev">Cisco / OpenEDG</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 26, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Linux Essentials</span>
-          <span class="tag tag-dev">Cisco</span>
-          <span class="tag tag-year">Jun 26, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jun 26, 2026</span>
+          </div>
         </div>
       </div>
       <div class="cert-group card reveal">
@@ -1116,14 +1191,18 @@ h1 {
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Managing a Business Venture</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 02, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jul 02, 2026</span>
+          </div>
         </div>
         <div class="cert-item">
           <div class="cert-dot done" aria-hidden="true"></div>
           <span class="cert-name">Greenhouse Gas Accounting for IT</span>
-          <span class="tag tag-cisco">Cisco</span>
-          <span class="tag tag-year">Jul 01, 2026</span>
+          <div class="cert-tags">
+            <span class="tag tag-cisco">Cisco</span>
+            <span class="tag tag-year">Jul 01, 2026</span>
+          </div>
         </div>
       </div>
     </div>
