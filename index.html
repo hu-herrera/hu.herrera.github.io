@@ -302,6 +302,11 @@ h1 {
 .badge-card-issuer { font-size:.68rem; color:var(--muted); }
 .badge-verify { font-size:.68rem; font-family:var(--font-mono); color:var(--purple); display:flex; align-items:center; gap:.2rem; }
 
+/* Technical Skills, full width under the projects grid */
+.skills-wide { margin-top:2rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); column-gap:1.75rem; row-gap:.25rem; }
+.skills-wide > .card-title { grid-column:1 / -1; }
+.skill-group { min-width:0; }
+
 /* Verified badges, full width under Certifications */
 .verified-wide { margin-top:2rem; }
 .verified-wide .badges-grid { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.9rem; }
@@ -622,66 +627,6 @@ h1 {
         </div>
       </div>
 
-      <!-- TODO: revisar que cada skill sea real -->
-      <!-- Technical Skills -->
-      <div class="card reveal">
-        <p class="card-title"><i class="fas fa-microchip" aria-hidden="true"></i> Technical Skills</p>
-
-        <p class="cert-group-label">Routing &amp; Switching</p>
-        <div class="tech-row" role="list" aria-label="Routing and switching skills">
-          <span class="tech" role="listitem">OSPF</span>
-          <span class="tech" role="listitem">EIGRP</span>
-          <span class="tech" role="listitem">BGP</span>
-          <span class="tech" role="listitem">VLAN</span>
-          <span class="tech" role="listitem">STP</span>
-          <span class="tech" role="listitem">EtherChannel</span>
-          <span class="tech" role="listitem">HSRP</span>
-          <span class="tech" role="listitem">NAT</span>
-          <span class="tech" role="listitem">QoS</span>
-        </div>
-
-        <p class="cert-group-label">Network Security</p>
-        <div class="tech-row" role="list" aria-label="Network security skills">
-          <span class="tech t-sec" role="listitem">ACLs</span>
-          <span class="tech t-sec" role="listitem">IPsec VPN</span>
-          <span class="tech t-sec" role="listitem">Firewall</span>
-          <span class="tech t-sec" role="listitem">Network Segmentation</span>
-          <span class="tech t-sec" role="listitem">Hardening</span>
-        </div>
-
-        <p class="cert-group-label">WAN</p>
-        <div class="tech-row" role="list" aria-label="WAN skills">
-          <span class="tech" role="listitem">MPLS</span>
-          <span class="tech" role="listitem">SD-WAN</span>
-          <span class="tech t-grn" role="listitem">LEO Satellite Links</span>
-          <span class="tech" role="listitem">Multi-carrier Failover</span>
-        </div>
-
-        <p class="cert-group-label">Security Testing</p>
-        <div class="tech-row" role="list" aria-label="Security testing skills">
-          <span class="tech t-sec" role="listitem">OWASP ZAP</span>
-          <span class="tech t-sec" role="listitem">Burp Suite</span>
-          <span class="tech t-sec" role="listitem">Nmap</span>
-          <span class="tech t-sec" role="listitem">Wireshark</span>
-        </div>
-
-        <p class="cert-group-label">Labs &amp; Tools</p>
-        <div class="tech-row" role="list" aria-label="Labs and tools">
-          <span class="tech" role="listitem">Cisco Packet Tracer</span>
-          <span class="tech" role="listitem">GNS3 / EVE-NG</span>
-          <span class="tech" role="listitem">Linux</span>
-          <span class="tech" role="listitem">cPanel</span>
-        </div>
-
-        <p class="cert-group-label">Programming &amp; Automation</p>
-        <div class="tech-row" role="list" aria-label="Programming and automation skills" style="margin-bottom:0">
-          <span class="tech t-oss" role="listitem">Python</span>
-          <span class="tech t-oss" role="listitem">C++20</span>
-          <span class="tech t-oss" role="listitem">Bash</span>
-          <span class="tech t-oss" role="listitem">Git</span>
-          <span class="tech t-oss" role="listitem">GitHub Actions</span>
-        </div>
-      </div>
 
 
     </aside>
@@ -927,6 +872,79 @@ h1 {
 
 
   <!-- ── CERTIFICATIONS (full width) ──────────────── -->
+  <!-- TODO: revisar que cada skill sea real -->
+  <!-- Technical Skills -->
+      <div class="card reveal skills-wide">
+        <p class="card-title"><i class="fas fa-microchip" aria-hidden="true"></i> Technical Skills</p>
+
+        <div class="skill-group">
+        <p class="cert-group-label">Routing &amp; Switching</p>
+        <div class="tech-row" role="list" aria-label="Routing and switching skills">
+          <span class="tech" role="listitem">OSPF</span>
+          <span class="tech" role="listitem">EIGRP</span>
+          <span class="tech" role="listitem">BGP</span>
+          <span class="tech" role="listitem">VLAN</span>
+          <span class="tech" role="listitem">STP</span>
+          <span class="tech" role="listitem">EtherChannel</span>
+          <span class="tech" role="listitem">HSRP</span>
+          <span class="tech" role="listitem">NAT</span>
+          <span class="tech" role="listitem">QoS</span>
+        </div>
+        </div>
+
+        <div class="skill-group">
+        <p class="cert-group-label">Network Security</p>
+        <div class="tech-row" role="list" aria-label="Network security skills">
+          <span class="tech t-sec" role="listitem">ACLs</span>
+          <span class="tech t-sec" role="listitem">IPsec VPN</span>
+          <span class="tech t-sec" role="listitem">Firewall</span>
+          <span class="tech t-sec" role="listitem">Network Segmentation</span>
+          <span class="tech t-sec" role="listitem">Hardening</span>
+        </div>
+        </div>
+
+        <div class="skill-group">
+        <p class="cert-group-label">WAN</p>
+        <div class="tech-row" role="list" aria-label="WAN skills">
+          <span class="tech" role="listitem">MPLS</span>
+          <span class="tech" role="listitem">SD-WAN</span>
+          <span class="tech t-grn" role="listitem">LEO Satellite Links</span>
+          <span class="tech" role="listitem">Multi-carrier Failover</span>
+        </div>
+        </div>
+
+        <div class="skill-group">
+        <p class="cert-group-label">Security Testing</p>
+        <div class="tech-row" role="list" aria-label="Security testing skills">
+          <span class="tech t-sec" role="listitem">OWASP ZAP</span>
+          <span class="tech t-sec" role="listitem">Burp Suite</span>
+          <span class="tech t-sec" role="listitem">Nmap</span>
+          <span class="tech t-sec" role="listitem">Wireshark</span>
+        </div>
+        </div>
+
+        <div class="skill-group">
+        <p class="cert-group-label">Labs &amp; Tools</p>
+        <div class="tech-row" role="list" aria-label="Labs and tools">
+          <span class="tech" role="listitem">Cisco Packet Tracer</span>
+          <span class="tech" role="listitem">GNS3 / EVE-NG</span>
+          <span class="tech" role="listitem">Linux</span>
+          <span class="tech" role="listitem">cPanel</span>
+        </div>
+        </div>
+
+        <div class="skill-group">
+        <p class="cert-group-label">Programming &amp; Automation</p>
+        <div class="tech-row" role="list" aria-label="Programming and automation skills" style="margin-bottom:0">
+          <span class="tech t-oss" role="listitem">Python</span>
+          <span class="tech t-oss" role="listitem">C++20</span>
+          <span class="tech t-oss" role="listitem">Bash</span>
+          <span class="tech t-oss" role="listitem">Git</span>
+          <span class="tech t-oss" role="listitem">GitHub Actions</span>
+        </div>
+        </div>
+      </div>
+
   <section class="certs-section" aria-label="Certifications">
     <p class="section-label">Certifications · 44 Credentials</p>
     <div class="certs-grid">
