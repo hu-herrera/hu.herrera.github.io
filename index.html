@@ -302,6 +302,10 @@ h1 {
 .badge-card-issuer { font-size:.58rem; color:var(--muted); }
 .badge-verify { font-size:.58rem; font-family:var(--font-mono); color:var(--purple); display:flex; align-items:center; gap:.2rem; }
 
+/* Verified badges, full width under Certifications */
+.verified-wide { margin-top:2rem; }
+.verified-wide .badges-grid { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.9rem; }
+
 /* ── Projects ────────────────────────────────────────── */
 .projects { display:flex; flex-direction:column; gap:1rem; }
 
@@ -679,276 +683,6 @@ h1 {
         </div>
       </div>
 
-      <!-- Verified Badges -->
-      <div class="card reveal">
-        <p class="card-title">
-          <i class="fas fa-shield-check" aria-hidden="true"></i>
-          Verified Credentials
-        </p>
-        <p style="font-size:.78rem;color:var(--muted);margin-bottom:.85rem;">
-          Independently verified on Credly — click any badge to confirm.
-        </p>
-
-        <div class="badges-grid" role="list" aria-label="Verified Credly badges">
-
-          <a href="https://www.credly.com/badges/3c75d238-a59b-44ba-b534-6a1a73c75203"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="CCNP Advanced Routing — verify on Credly">
-            <img src="https://images.credly.com/images/3bb1a127-e4e4-47ac-b83f-6a9fbf343f00/linkedin_thumb_CCNP_ENARSI.png"
-                 alt="CCNP Advanced Routing badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">CCNP: Advanced Routing</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/badges/27894420-91de-45f2-9992-cfbc74843a3f"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="CCNP Core Networking — verify on Credly">
-            <img src="https://images.credly.com/images/8b0ca811-bd98-4083-ba50-512ab9f6262b/linkedin_thumb_CCNPENCOR__1_.png"
-                 alt="CCNP Core Networking badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">CCNP: Core Networking</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/badges/c7542135-501b-4413-b401-549f22bf2fea"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Junior Cybersecurity Analyst Career Path — verify on Credly">
-            <img src="https://images.credly.com/images/441578ec-c0f3-46cc-95fc-86b27e90cf4f/linkedin_thumb_image.png"
-                 alt="Junior Cybersecurity Analyst badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Junior Cybersecurity Analyst</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/badges/a272df53-f6ea-4c1c-ba58-7788494edf7c"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Ethical Hacker — verify on Credly">
-            <img src="https://images.credly.com/images/242902b5-f527-42ad-865e-977c9e1b5b58/linkedin_thumb_image.png"
-                 alt="Ethical Hacker badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Ethical Hacker</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/badges/cd9d17a0-c2c5-4b4b-a96a-8291b097a863"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Network Security — verify on Credly">
-            <img src="https://images.credly.com/images/f7387386-553c-4be5-b3f3-077f78152f31/linkedin_thumb_Network_Security.png"
-                 alt="Network Security badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Network Security</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/badges/b4fbefe1-4d26-4253-afc6-07f385bd2b26"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="AWS Cloud Foundations — verify on Credly">
-            <img src="https://images.credly.com/images/e3541a0c-dd4a-4820-8052-5001006efc85/linkedin_thumb_blob"
-                 alt="AWS Academy Cloud Foundations badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">AWS Cloud Foundations</span>
-            <span class="badge-card-issuer">Amazon Web Services</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/badges/e003ea61-9de6-4c1e-94a6-b998e6c4c229"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="AI Fundamentals — verify on Credly">
-            <img src="https://images.credly.com/images/82b908e1-fdcd-4785-9d32-97f11ccbcf08/linkedin_thumb_image.png"
-                 alt="AI Fundamentals badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">AI Fundamentals</span>
-            <span class="badge-card-issuer">IBM SkillsBuild</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="C++ Essentials 1 — verify on Credly">
-            <img src="https://images.credly.com/images/fd262680-b0e1-41e0-bd03-6f9ea2b0c4e8/image.png"
-                 alt="C++ Essentials 1 badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">C++ Essentials 1</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="HTML Essentials — verify on Credly">
-            <img src="https://images.credly.com/images/b1c17d0c-e76b-45fc-9b28-87b01ae1caf3/blob"
-                 alt="HTML Essentials badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">HTML Essentials</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Managing a Business Venture — verify on Credly">
-            <img src="https://images.credly.com/images/397c4c71-2f0b-4476-8f61-6a6c726d6cd4/image.png"
-                 alt="Managing a Business Venture badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Managing a Business Venture</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Cybersecurity Defense Analyst Career Path — verify on Credly">
-            <img src="https://images.credly.com/images/a8d6cb9c-e0e3-4705-aab0-160cc9d10a11/blob"
-                 alt="Cybersecurity Defense Analyst Career Path badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Cybersecurity Defense Analyst Career Path</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Data Science Essentials with Python — verify on Credly">
-            <img src="https://images.credly.com/images/62db59ef-19f9-4652-a00c-7582baee8177/blob"
-                 alt="Data Science Essentials with Python badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Data Science Essentials with Python</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Introduction to Greenhouse Gas Accounting for IT — verify on Credly">
-            <img src="https://images.credly.com/images/687574ff-1cd6-46e7-8a04-a440276be933/blob"
-                 alt="Introduction to Greenhouse Gas Accounting for IT badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Introduction to Greenhouse Gas Accounting for IT</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Network Technician Career Path — verify on Credly">
-            <img src="https://images.credly.com/images/978f88dc-c247-4093-9d39-6efac3651297/image.png"
-                 alt="Network Technician Career Path badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Network Technician Career Path</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Endpoint Security — verify on Credly">
-            <img src="https://images.credly.com/images/0ca5f542-fb5e-4a22-9b7a-c1a1ce4c3db7/EndpointSecurity.png"
-                 alt="Endpoint Security badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Endpoint Security</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Network Support and Security — verify on Credly">
-            <img src="https://images.credly.com/images/a4dd891f-7bf5-4938-8241-50dc81e8cc00/image.png"
-                 alt="Network Support and Security badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Network Support and Security</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Network Addressing and Basic Troubleshooting — verify on Credly">
-            <img src="https://images.credly.com/images/49c099bd-8542-4f48-8c03-f21799dcaf51/image.png"
-                 alt="Network Addressing and Basic Troubleshooting badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Network Addressing and Basic Troubleshooting</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="AI Fundamentals with IBM SkillsBuild — verify on Credly">
-            <img src="https://images.credly.com/images/26c21273-c0ab-485b-98a7-f1212dcb82b8/image.png"
-                 alt="AI Fundamentals with IBM SkillsBuild badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">AI Fundamentals with IBM SkillsBuild</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Introduction to Cybersecurity — verify on Credly">
-            <img src="https://images.credly.com/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png"
-                 alt="Introduction to Cybersecurity badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Introduction to Cybersecurity</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Linux Essentials — verify on Credly">
-            <img src="https://images.credly.com/images/e8fe3d67-2967-43d0-bc4a-7a268a37f47b/image.png"
-                 alt="Linux Essentials badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Linux Essentials</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Networking Basics — verify on Credly">
-            <img src="https://images.credly.com/images/5bdd6a39-3e03-4444-9510-ecff80c9ce79/image.png"
-                 alt="Networking Basics badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Networking Basics</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Python Essentials 1 — verify on Credly">
-            <img src="https://images.credly.com/images/68c0b94d-f6ac-40b1-a0e0-921439eb092e/image.png"
-                 alt="Python Essentials 1 badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Python Essentials 1</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
-             target="_blank" rel="noopener noreferrer"
-             class="badge-card" role="listitem"
-             aria-label="Introduction to IoT — verify on Credly">
-            <img src="https://images.credly.com/images/fce226c2-0f13-4e17-b60c-24fa6ffd88cb/Intro2IoT.png"
-                 alt="Introduction to IoT badge" width="72" height="72" loading="lazy">
-            <span class="badge-card-name">Introduction to IoT</span>
-            <span class="badge-card-issuer">Cisco</span>
-            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
-          </a>
-
-        </div>
-        <p style="font-size:.7rem;color:var(--muted);margin-top:.85rem;font-family:var(--font-mono);">
-          See all verified badges on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
-        </p>
-      </div>
 
     </aside>
 
@@ -1542,10 +1276,6 @@ h1 {
         </details>
       </div>
     </div>
-    <p class="cert-note" style="margin-top:1.2rem;">
-      <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-      Cisco credentials via <strong>Cisco Networking Academy</strong> · Microsoft Learn Level 9 (58 Badges / 10 Trophies) via <a href="https://learn.microsoft.com/es-mx/users/hugoherrerainostroza-4542/achievements" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Microsoft Learn ↗</a> · ANCI via <strong>Agencia Nacional de Ciberseguridad</strong> · CCNA, CCNP, CyberOps &amp; DevNet taken on-site at <strong>Duoc UC</strong>. Verified on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
-    </p>
     <details class="other-courses">
       <summary>Other courses · 7</summary>
         <div class="cert-item">
@@ -1606,6 +1336,282 @@ h1 {
         </div>
     </details>
   </section>
+
+  <!-- Verified Badges -->
+  <div class="card reveal verified-wide">
+        <p class="card-title">
+          <i class="fas fa-shield-check" aria-hidden="true"></i>
+          Verified Credentials
+        </p>
+        <p style="font-size:.78rem;color:var(--muted);margin-bottom:.85rem;">
+          Independently verified on Credly — click any badge to confirm.
+        </p>
+
+        <div class="badges-grid" role="list" aria-label="Verified Credly badges">
+
+          <a href="https://www.credly.com/badges/3c75d238-a59b-44ba-b534-6a1a73c75203"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="CCNP Advanced Routing — verify on Credly">
+            <img src="https://images.credly.com/images/3bb1a127-e4e4-47ac-b83f-6a9fbf343f00/linkedin_thumb_CCNP_ENARSI.png"
+                 alt="CCNP Advanced Routing badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">CCNP: Advanced Routing</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/badges/27894420-91de-45f2-9992-cfbc74843a3f"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="CCNP Core Networking — verify on Credly">
+            <img src="https://images.credly.com/images/8b0ca811-bd98-4083-ba50-512ab9f6262b/linkedin_thumb_CCNPENCOR__1_.png"
+                 alt="CCNP Core Networking badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">CCNP: Core Networking</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/badges/c7542135-501b-4413-b401-549f22bf2fea"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Junior Cybersecurity Analyst Career Path — verify on Credly">
+            <img src="https://images.credly.com/images/441578ec-c0f3-46cc-95fc-86b27e90cf4f/linkedin_thumb_image.png"
+                 alt="Junior Cybersecurity Analyst badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Junior Cybersecurity Analyst</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/badges/a272df53-f6ea-4c1c-ba58-7788494edf7c"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Ethical Hacker — verify on Credly">
+            <img src="https://images.credly.com/images/242902b5-f527-42ad-865e-977c9e1b5b58/linkedin_thumb_image.png"
+                 alt="Ethical Hacker badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Ethical Hacker</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/badges/cd9d17a0-c2c5-4b4b-a96a-8291b097a863"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Network Security — verify on Credly">
+            <img src="https://images.credly.com/images/f7387386-553c-4be5-b3f3-077f78152f31/linkedin_thumb_Network_Security.png"
+                 alt="Network Security badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Network Security</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/badges/b4fbefe1-4d26-4253-afc6-07f385bd2b26"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="AWS Cloud Foundations — verify on Credly">
+            <img src="https://images.credly.com/images/e3541a0c-dd4a-4820-8052-5001006efc85/linkedin_thumb_blob"
+                 alt="AWS Academy Cloud Foundations badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">AWS Cloud Foundations</span>
+            <span class="badge-card-issuer">Amazon Web Services</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/badges/e003ea61-9de6-4c1e-94a6-b998e6c4c229"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="AI Fundamentals — verify on Credly">
+            <img src="https://images.credly.com/images/82b908e1-fdcd-4785-9d32-97f11ccbcf08/linkedin_thumb_image.png"
+                 alt="AI Fundamentals badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">AI Fundamentals</span>
+            <span class="badge-card-issuer">IBM SkillsBuild</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="C++ Essentials 1 — verify on Credly">
+            <img src="https://images.credly.com/images/fd262680-b0e1-41e0-bd03-6f9ea2b0c4e8/image.png"
+                 alt="C++ Essentials 1 badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">C++ Essentials 1</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="HTML Essentials — verify on Credly">
+            <img src="https://images.credly.com/images/b1c17d0c-e76b-45fc-9b28-87b01ae1caf3/blob"
+                 alt="HTML Essentials badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">HTML Essentials</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Managing a Business Venture — verify on Credly">
+            <img src="https://images.credly.com/images/397c4c71-2f0b-4476-8f61-6a6c726d6cd4/image.png"
+                 alt="Managing a Business Venture badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Managing a Business Venture</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Cybersecurity Defense Analyst Career Path — verify on Credly">
+            <img src="https://images.credly.com/images/a8d6cb9c-e0e3-4705-aab0-160cc9d10a11/blob"
+                 alt="Cybersecurity Defense Analyst Career Path badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Cybersecurity Defense Analyst Career Path</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Data Science Essentials with Python — verify on Credly">
+            <img src="https://images.credly.com/images/62db59ef-19f9-4652-a00c-7582baee8177/blob"
+                 alt="Data Science Essentials with Python badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Data Science Essentials with Python</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Introduction to Greenhouse Gas Accounting for IT — verify on Credly">
+            <img src="https://images.credly.com/images/687574ff-1cd6-46e7-8a04-a440276be933/blob"
+                 alt="Introduction to Greenhouse Gas Accounting for IT badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Introduction to Greenhouse Gas Accounting for IT</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Network Technician Career Path — verify on Credly">
+            <img src="https://images.credly.com/images/978f88dc-c247-4093-9d39-6efac3651297/image.png"
+                 alt="Network Technician Career Path badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Network Technician Career Path</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Endpoint Security — verify on Credly">
+            <img src="https://images.credly.com/images/0ca5f542-fb5e-4a22-9b7a-c1a1ce4c3db7/EndpointSecurity.png"
+                 alt="Endpoint Security badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Endpoint Security</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Network Support and Security — verify on Credly">
+            <img src="https://images.credly.com/images/a4dd891f-7bf5-4938-8241-50dc81e8cc00/image.png"
+                 alt="Network Support and Security badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Network Support and Security</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Network Addressing and Basic Troubleshooting — verify on Credly">
+            <img src="https://images.credly.com/images/49c099bd-8542-4f48-8c03-f21799dcaf51/image.png"
+                 alt="Network Addressing and Basic Troubleshooting badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Network Addressing and Basic Troubleshooting</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="AI Fundamentals with IBM SkillsBuild — verify on Credly">
+            <img src="https://images.credly.com/images/26c21273-c0ab-485b-98a7-f1212dcb82b8/image.png"
+                 alt="AI Fundamentals with IBM SkillsBuild badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">AI Fundamentals with IBM SkillsBuild</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Introduction to Cybersecurity — verify on Credly">
+            <img src="https://images.credly.com/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png"
+                 alt="Introduction to Cybersecurity badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Introduction to Cybersecurity</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Linux Essentials — verify on Credly">
+            <img src="https://images.credly.com/images/e8fe3d67-2967-43d0-bc4a-7a268a37f47b/image.png"
+                 alt="Linux Essentials badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Linux Essentials</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Networking Basics — verify on Credly">
+            <img src="https://images.credly.com/images/5bdd6a39-3e03-4444-9510-ecff80c9ce79/image.png"
+                 alt="Networking Basics badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Networking Basics</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Python Essentials 1 — verify on Credly">
+            <img src="https://images.credly.com/images/68c0b94d-f6ac-40b1-a0e0-921439eb092e/image.png"
+                 alt="Python Essentials 1 badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Python Essentials 1</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+          <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges"
+             target="_blank" rel="noopener noreferrer"
+             class="badge-card" role="listitem"
+             aria-label="Introduction to IoT — verify on Credly">
+            <img src="https://images.credly.com/images/fce226c2-0f13-4e17-b60c-24fa6ffd88cb/Intro2IoT.png"
+                 alt="Introduction to IoT badge" width="72" height="72" loading="lazy">
+            <span class="badge-card-name">Introduction to IoT</span>
+            <span class="badge-card-issuer">Cisco</span>
+            <span class="badge-verify"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify</span>
+          </a>
+
+        </div>
+        <p style="font-size:.7rem;color:var(--muted);margin-top:.85rem;font-family:var(--font-mono);">
+          See all verified badges on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
+        </p>
+      </div>
+
+    <p class="cert-note" style="margin-top:1.2rem;">
+      <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+      Cisco credentials via <strong>Cisco Networking Academy</strong> · Microsoft Learn Level 9 (58 Badges / 10 Trophies) via <a href="https://learn.microsoft.com/es-mx/users/hugoherrerainostroza-4542/achievements" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Microsoft Learn ↗</a> · ANCI via <strong>Agencia Nacional de Ciberseguridad</strong> · CCNA, CCNP, CyberOps &amp; DevNet taken on-site at <strong>Duoc UC</strong>. Verified on <a href="https://www.credly.com/users/hugo-herrera.690e9820/badges" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">Credly ↗</a>
+    </p>
 
   <!-- ── FOOTER ─────────────────────────────────── -->
   <footer class="footer reveal">
