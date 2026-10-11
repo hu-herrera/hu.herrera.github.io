@@ -765,6 +765,141 @@ h1 {
       <p class="section-label">Projects</p>
       <div class="projects">
 
+        <!-- Pacific Financial NOC -->
+        <article class="project-card p-live reveal">
+          <div class="project-header">
+            <h2 class="project-title">
+              <i class="fas fa-network-wired" aria-hidden="true"></i>
+              Pacific Financial NOC — Enterprise WAN Simulator
+            </h2>
+            <span class="project-status s-live" aria-label="Live project">Live ↗</span>
+          </div>
+          <p class="project-desc">
+            Interactive visual simulator of an enterprise WAN, built as a university project for
+            Networking &amp; Telecommunications Engineering. It compares a
+            <strong>legacy architecture (2014–2015: MPLS over Cisco)</strong> with a
+            <strong>modern 2026 design built on LEO satellite links, four wireless carriers and a perimeter
+            firewall</strong>, across <strong>22 Chilean branch sites</strong>. Models 18 satellite trains with
+            automatic handover logic and includes 8 academic failure and recovery scenarios. Zero dependencies.
+          </p>
+          <div class="tech-row" role="list" aria-label="Technologies">
+            <span class="tech"       role="listitem">Network Design</span>
+            <span class="tech"       role="listitem">WAN</span>
+            <span class="tech"       role="listitem">MPLS</span>
+            <span class="tech t-grn" role="listitem">LEO Satellites</span>
+            <span class="tech t-sec" role="listitem">Failover / Handover</span>
+            <span class="tech"       role="listitem">HTML5</span>
+            <span class="tech"       role="listitem">CSS3</span>
+            <span class="tech"       role="listitem">JavaScript</span>
+            <span class="tech"       role="listitem">SVG</span>
+          </div>
+          <!-- TODO: agregar link de GitHub y demo en vivo. Sin links, no se muestra ningún botón. -->
+        </article>
+
+        <!-- Flask Security Audit -->
+        <article class="project-card p-live reveal">
+          <div class="project-header">
+            <h2 class="project-title">
+              <i class="fas fa-shield-halved" aria-hidden="true"></i>
+              Flask Web App Security Audit
+            </h2>
+            <span class="project-status s-live" aria-label="Live project">Live ↗</span>
+          </div>
+          <p class="project-desc">
+            Full <strong>penetration test</strong> of a deliberately vulnerable Flask app:
+            five findings — Command Injection, Reflected XSS, CSRF, SQL Injection and an
+            exposed debug console (RCE) — each located in source, proven with an
+            <strong>OWASP ZAP scan of 999 requests</strong> plus manual exploits, and shipped
+            with its own remediation. Every attack was run and verified to fire against the
+            target and to be blocked against the hardened version.
+          </p>
+          <div class="tech-row" role="list" aria-label="Technologies">
+            <span class="tech t-sec" role="listitem">OWASP ZAP</span>
+            <span class="tech t-sec" role="listitem">Burp Suite</span>
+            <span class="tech t-sec" role="listitem">OWASP Top 10</span>
+            <span class="tech"       role="listitem">Python</span>
+            <span class="tech"       role="listitem">Flask</span>
+            <span class="tech"       role="listitem">SQLite</span>
+            <span class="tech t-oss" role="listitem">Open Source</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/hu-herrera/flask-security-audit"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               aria-label="View Flask Web App Security Audit on GitHub (opens in new tab)">
+              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- Seguridad -->
+        <article class="project-card p-live reveal">
+          <div class="project-header">
+            <h2 class="project-title">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+              Residential Security System
+            </h2>
+            <span class="project-status s-live" aria-label="Live project">Live ↗</span>
+          </div>
+          <p class="project-desc">
+            Automated security system with <strong>motion sensors</strong>, automatic door control,
+            audible/visual alarm and surveillance camera. Includes nighttime logic (01:00–05:00)
+            with autonomous activation. Runs on Raspberry Pi, Cisco Packet Tracer, or any PC
+            in simulation mode — same codebase, zero changes.
+          </p>
+          <div class="tech-row" role="list" aria-label="Technologies">
+            <span class="tech"       role="listitem">Python</span>
+            <span class="tech t-grn" role="listitem">Raspberry Pi</span>
+            <span class="tech t-oss" role="listitem">GPIO</span>
+            <span class="tech t-sec" role="listitem">Packet Tracer</span>
+            <span class="tech t-grn" role="listitem">IoT</span>
+            <span class="tech t-oss" role="listitem">Open Source</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/hu-herrera/sistema-seguridad-residencial"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               aria-label="View Residential Security System on GitHub (opens in new tab)">
+              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- Riego -->
+        <article class="project-card p-green reveal">
+          <div class="project-header">
+            <h2 class="project-title">
+              <i class="fas fa-seedling i-green" aria-hidden="true"></i>
+              Smart Irrigation System
+            </h2>
+            <span class="project-status s-green" aria-label="Live project">Live ↗</span>
+          </div>
+          <p class="project-desc">
+            End-to-end <strong>IoT system</strong> built on Arduino with a YL-69 moisture sensor
+            and water pump. Features automatic control via configurable thresholds, manual override,
+            a Python GUI with 24h history chart, and a local REST API on port 8080 with a
+            mobile-responsive web panel — all running 100% offline.
+          </p>
+          <div class="tech-row" role="list" aria-label="Technologies">
+            <span class="tech"      role="listitem">Python</span>
+            <span class="tech"      role="listitem">Arduino C++</span>
+            <span class="tech"      role="listitem">Tkinter</span>
+            <span class="tech"      role="listitem">PySerial</span>
+            <span class="tech"      role="listitem">SQLite</span>
+            <span class="tech t-grn" role="listitem">IoT</span>
+            <span class="tech t-oss" role="listitem">Open Source</span>
+            <span class="tech t-sec" role="listitem">REST API</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/hu-herrera/sistema-riego-inteligente"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               aria-label="View Smart Irrigation System on GitHub (opens in new tab)">
+              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+            </a>
+          </div>
+        </article>
+
         <!-- Palworld Hardcore CLI -->
         <article class="project-card p-green reveal">
           <div class="project-header">
@@ -811,12 +946,11 @@ h1 {
             <span class="project-status s-wip" aria-label="Work in progress">In development</span>
           </div>
           <p class="project-desc">
-            Competitive desktop app (PySide6/Qt) designed to help newcomer players build competitive teams with their favorite Pokémon to beat the meta.
-            Its core feature is an <strong>Interactive Manual Team Builder</strong>: players search Pokémon from a 315-species catalog and manually configure custom builds (EV/IV distributions with 66-point allocations, valid movepool selections, items, and abilities) with usage trend guidance. Includes dynamic <strong>Mega-Evolution toggling</strong> (75 forms) recalculating base stats in real time.
-            The app runs a deep <strong>Synergy &amp; Gap Analysis Engine</strong> that diagnoses team weaknesses, coverage flaws, and stat synergies. At match start, the <strong>Team Preview Assistant</strong> uses screen capture &amp; sprite matching (OpenCV) to identify the opponent's roster and instruct which Pokémon from the user's team to bring into battle.
-          </p>
-          <p class="project-desc">
-            <strong>Status:</strong> The Team Builder, Synergy Analyzer, Mega-Evolution engine, movepool validator, and SQLite database (+390 moves/stats) are fully functional and backed by 449 unit tests and a GitHub Actions CI pipeline. Real-time in-game battle HUD recommendations are under active development.
+            Competitive desktop app (PySide6/Qt) that helps players build competitive teams. It pairs an
+            interactive <strong>team builder</strong> with a <strong>Synergy &amp; Gap Analysis Engine</strong>
+            that flags weaknesses and coverage gaps, and an <strong>OpenCV</strong>-based Team Preview
+            Assistant that reads the opponent's roster from screen capture. Backed by <strong>449 unit tests</strong>
+            and a <strong>GitHub Actions CI</strong> pipeline.
           </p>
           <div class="tech-row" role="list" aria-label="Technologies">
             <span class="tech"       role="listitem">Python</span>
@@ -832,110 +966,6 @@ h1 {
                target="_blank" rel="noopener noreferrer"
                class="btn btn-primary"
                aria-label="View RivalScope on GitHub (opens in new tab)">
-              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
-            </a>
-          </div>
-        </article>
-
-        <!-- Riego -->
-        <article class="project-card p-green reveal">
-          <div class="project-header">
-            <h2 class="project-title">
-              <i class="fas fa-seedling i-green" aria-hidden="true"></i>
-              Smart Irrigation System
-            </h2>
-            <span class="project-status s-green" aria-label="Live project">Live ↗</span>
-          </div>
-          <p class="project-desc">
-            End-to-end <strong>IoT system</strong> built on Arduino with a YL-69 moisture sensor
-            and water pump. Features automatic control via configurable thresholds, manual override,
-            a Python GUI with 24h history chart, and a local REST API on port 8080 with a
-            mobile-responsive web panel — all running 100% offline.
-          </p>
-          <div class="tech-row" role="list" aria-label="Technologies">
-            <span class="tech"      role="listitem">Python</span>
-            <span class="tech"      role="listitem">Arduino C++</span>
-            <span class="tech"      role="listitem">Tkinter</span>
-            <span class="tech"      role="listitem">PySerial</span>
-            <span class="tech"      role="listitem">SQLite</span>
-            <span class="tech t-grn" role="listitem">IoT</span>
-            <span class="tech t-oss" role="listitem">Open Source</span>
-            <span class="tech t-sec" role="listitem">REST API</span>
-          </div>
-          <div class="project-footer">
-            <a href="https://github.com/hu-herrera/sistema-riego-inteligente"
-               target="_blank" rel="noopener noreferrer"
-               class="btn btn-primary"
-               aria-label="View Smart Irrigation System on GitHub (opens in new tab)">
-              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
-            </a>
-          </div>
-        </article>
-
-        <!-- Seguridad -->
-        <article class="project-card p-live reveal">
-          <div class="project-header">
-            <h2 class="project-title">
-              <i class="fas fa-shield-alt" aria-hidden="true"></i>
-              Residential Security System
-            </h2>
-            <span class="project-status s-live" aria-label="Live project">Live ↗</span>
-          </div>
-          <p class="project-desc">
-            Automated security system with <strong>motion sensors</strong>, automatic door control,
-            audible/visual alarm and surveillance camera. Includes nighttime logic (01:00–05:00)
-            with autonomous activation. Runs on Raspberry Pi, Cisco Packet Tracer, or any PC
-            in simulation mode — same codebase, zero changes.
-          </p>
-          <div class="tech-row" role="list" aria-label="Technologies">
-            <span class="tech"       role="listitem">Python</span>
-            <span class="tech t-grn" role="listitem">Raspberry Pi</span>
-            <span class="tech t-oss" role="listitem">GPIO</span>
-            <span class="tech t-sec" role="listitem">Packet Tracer</span>
-            <span class="tech t-grn" role="listitem">IoT</span>
-            <span class="tech t-oss" role="listitem">Open Source</span>
-          </div>
-          <div class="project-footer">
-            <a href="https://github.com/hu-herrera/sistema-seguridad-residencial"
-               target="_blank" rel="noopener noreferrer"
-               class="btn btn-primary"
-               aria-label="View Residential Security System on GitHub (opens in new tab)">
-              <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
-            </a>
-          </div>
-        </article>
-
-        <!-- Flask Security Audit -->
-        <article class="project-card p-live reveal">
-          <div class="project-header">
-            <h2 class="project-title">
-              <i class="fas fa-shield-halved" aria-hidden="true"></i>
-              Flask Web App Security Audit
-            </h2>
-            <span class="project-status s-live" aria-label="Live project">Live ↗</span>
-          </div>
-          <p class="project-desc">
-            Full <strong>penetration test</strong> of a deliberately vulnerable Flask app:
-            five findings — Command Injection, Reflected XSS, CSRF, SQL Injection and an
-            exposed debug console (RCE) — each located in source, proven with an
-            <strong>OWASP ZAP scan of 999 requests</strong> plus manual exploits, and shipped
-            with its own remediation. Every attack was run and verified to fire against the
-            target and to be blocked against the hardened version.
-          </p>
-          <div class="tech-row" role="list" aria-label="Technologies">
-            <span class="tech t-sec" role="listitem">OWASP ZAP</span>
-            <span class="tech t-sec" role="listitem">Burp Suite</span>
-            <span class="tech t-sec" role="listitem">OWASP Top 10</span>
-            <span class="tech"       role="listitem">Python</span>
-            <span class="tech"       role="listitem">Flask</span>
-            <span class="tech"       role="listitem">SQLite</span>
-            <span class="tech t-oss" role="listitem">Open Source</span>
-          </div>
-          <div class="project-footer">
-            <a href="https://github.com/hu-herrera/flask-security-audit"
-               target="_blank" rel="noopener noreferrer"
-               class="btn btn-primary"
-               aria-label="View Flask Web App Security Audit on GitHub (opens in new tab)">
               <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
             </a>
           </div>
