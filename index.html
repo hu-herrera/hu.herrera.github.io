@@ -200,7 +200,9 @@ h1 {
 .chip-aws    { background:rgba(255,153,0,.12);   color:#ffb84d; border:1px solid rgba(255,153,0,.15); }
 
 /* ── Grid ────────────────────────────────────────────── */
-.grid { display:grid; grid-template-columns:360px 1fr; gap:2rem; align-items:start; }
+aside { display:flex; flex-direction:column; }
+aside > .card:last-child { flex:1; }
+.grid { display:grid; grid-template-columns:360px 1fr; gap:2rem; align-items:stretch; }
 @media (max-width:820px) { .grid { grid-template-columns:1fr; } }
 
 /* ── Section label ───────────────────────────────────── */
@@ -247,14 +249,18 @@ h1 {
    Masonry via CSS columns: cards flow and fill gaps instead of leaving a hole
    under the short groups (Business has 2 items, Networking has 12). */
 .certs-section { margin-top:3rem; }
-.certs-grid { column-width:330px; column-gap:1rem; }
+.certs-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; align-items:stretch; }
+.cert-col { display:flex; flex-direction:column; gap:1rem; min-width:0; }
+.cert-col > .cert-group:last-child { flex:1; }
+@media (max-width:900px) { .certs-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:600px) { .certs-grid { grid-template-columns:minmax(0,1fr); } }
 .other-courses { margin-top:1.2rem; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:0 1.35rem; }
 .other-courses summary { cursor:pointer; list-style:none; padding:1rem 0; font-size:.82rem; font-weight:700; color:var(--text); display:flex; align-items:center; gap:.55rem; }
 .other-courses summary::-webkit-details-marker { display:none; }
 .other-courses summary::before { content:'+'; font-family:var(--font-mono); color:var(--cyan); width:16px; text-align:center; }
 .other-courses[open] summary::before { content:'–'; }
 .other-courses[open] summary { border-bottom:1px solid var(--border); margin-bottom:.25rem; }
-.cert-group { padding:1.25rem 1.35rem; break-inside:avoid; margin-bottom:1rem; }
+.cert-group { padding:1.25rem 1.35rem; break-inside:avoid; }
 .cert-group-head { font-size:.82rem; font-weight:700; color:var(--text); display:flex; align-items:center; gap:.55rem; margin-bottom:.85rem; padding-bottom:.7rem; border-bottom:1px solid var(--border); letter-spacing:.01em; }
 .cert-group-head i { color:var(--cyan); width:16px; text-align:center; }
 
@@ -303,7 +309,9 @@ h1 {
 .badge-verify { font-size:.68rem; font-family:var(--font-mono); color:var(--purple); display:flex; align-items:center; gap:.2rem; }
 
 /* Technical Skills, full width under the projects grid */
-.skills-wide { margin-top:2rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); column-gap:1.75rem; row-gap:.25rem; }
+.skills-wide { margin-top:2rem; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:1.75rem; row-gap:.25rem; }
+@media (max-width:900px) { .skills-wide { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:600px) { .skills-wide { grid-template-columns:minmax(0,1fr); } }
 .skills-wide > .card-title { grid-column:1 / -1; }
 .skill-group { min-width:0; }
 
@@ -948,350 +956,356 @@ h1 {
   <section class="certs-section" aria-label="Certifications">
     <p class="section-label">Certifications · 44 Credentials</p>
     <div class="certs-grid">
-      <div class="cert-group card reveal">
-        <p class="cert-group-head"><i class="fas fa-shield-halved" aria-hidden="true"></i> Cybersecurity</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Respuesta a Incidentes y Taxonomía en Ciberseguridad</span>
-          <div class="cert-tags">
-            <span class="tag tag-anci">ANCI Chile</span>
-            <span class="tag tag-year">Ago 10, 2026</span>
+      <div class="cert-col">
+        <div class="cert-group card reveal">
+          <p class="cert-group-head"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking &amp; IoT</p>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">CCNP Enterprise: Advanced Routing <small>Cisco NetAcad course · Duoc UC</small></span>
+            <div class="cert-tags">
+              <span class="tag tag-duoc">Duoc UC</span>
+              <span class="tag tag-year">Mar 11, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">CCNP Enterprise: Core Networking <small>Cisco NetAcad course · Duoc UC</small></span>
+            <div class="cert-tags">
+              <span class="tag tag-duoc">Duoc UC</span>
+              <span class="tag tag-year">Jun 25, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">CCNA: Enterprise Networking, Security &amp; Automation</span>
+            <div class="cert-tags">
+              <span class="tag tag-duoc">Duoc UC</span>
+              <span class="tag tag-year">2024</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">CCNA: Routing &amp; Switching</span>
+            <div class="cert-tags">
+              <span class="tag tag-duoc">Duoc UC</span>
+              <span class="tag tag-year">2023</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Diseño e Implementación de Redes Híbridas (Azure VNets)</span>
+            <div class="cert-tags">
+              <span class="tag tag-ms">Microsoft</span>
+              <span class="tag tag-year">Ago 11, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Network Technician Career Path <small>Exam</small></span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jul 01, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Troubleshooting &amp; Maintaining Cisco IP Networks</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">2025</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Network Support and Security</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jun 30, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Network Addressing and Basic Troubleshooting</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jun 27, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Emerging IoT Technology Surveillance</span>
+            <div class="cert-tags">
+              <span class="tag tag-duoc">Duoc UC</span>
+              <span class="tag tag-year">2025</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Introduction to IoT</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Oct 23, 2025</span>
+            </div>
           </div>
         </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Ethical Hacker</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jun 26, 2026</span>
+        <div class="cert-group card reveal">
+          <p class="cert-group-head"><i class="fas fa-user-secret" aria-hidden="true"></i> Hands-on Labs</p>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">HackTheBox Academy: 27 module completion badges</span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">HackTheBox</span>
+            </div>
+          </div>
+          <details class="other-courses" style="margin-top:.6rem;padding:0 .9rem;">
+            <summary>Modules completed · 27</summary>
+            <ul style="list-style:none;padding:.5rem 0 .75rem;font-size:.8rem;color:var(--soft);line-height:1.7;">
+              <li>Learning Process <span style="color:var(--muted)">· Aug 11, 2026</span></li>
+              <li>Introduction to Academy <span style="color:var(--muted)">· Aug 11, 2026</span></li>
+              <li>Linux Fundamentals <span style="color:var(--muted)">· Aug 11, 2026</span></li>
+              <li>Introduction to Bash Scripting <span style="color:var(--muted)">· Aug 15, 2026</span></li>
+              <li>Introduction to Networking <span style="color:var(--muted)">· Aug 13, 2026</span></li>
+              <li>Web Requests <span style="color:var(--muted)">· Aug 11, 2026</span></li>
+              <li>Using the Metasploit Framework <span style="color:var(--muted)">· Aug 16, 2026</span></li>
+              <li>JavaScript Deobfuscation <span style="color:var(--muted)">· Aug 12, 2026</span></li>
+              <li>Windows Fundamentals <span style="color:var(--muted)">· Aug 13, 2026</span></li>
+              <li>Introduction to Web Applications <span style="color:var(--muted)">· Aug 16, 2026</span></li>
+              <li>Getting Started <span style="color:var(--muted)">· Aug 13, 2026</span></li>
+              <li>Intro to Network Traffic Analysis <span style="color:var(--muted)">· Aug 16, 2026</span></li>
+              <li>Introduction to Information Security <span style="color:var(--muted)">· Aug 13, 2026</span></li>
+              <li>Introduction to Penetration Testing <span style="color:var(--muted)">· Aug 16, 2026</span></li>
+              <li>Network Foundations <span style="color:var(--muted)">· Aug 13, 2026</span></li>
+              <li>Pentest in a Nutshell <span style="color:var(--muted)">· Aug 16, 2026</span></li>
+              <li>Hacking WordPress <span style="color:var(--muted)">· Sep 1, 2026</span></li>
+              <li>Network Enumeration with Nmap <span style="color:var(--muted)">· Sep 1, 2026</span></li>
+              <li>Cracking Passwords with Hashcat <span style="color:var(--muted)">· Sep 1, 2026</span></li>
+              <li>Active Directory LDAP <span style="color:var(--muted)">· Sep 1, 2026</span></li>
+              <li>File Inclusion <span style="color:var(--muted)">· Sep 2, 2026</span></li>
+              <li>File Transfers <span style="color:var(--muted)">· Sep 3, 2026</span></li>
+              <li>DNS Enumeration Using Python <span style="color:var(--muted)">· Sep 4, 2026</span></li>
+              <li>OSINT: Corporate Recon <span style="color:var(--muted)">· Sep 5, 2026</span></li>
+              <li>Stack-Based Buffer Overflows <span style="color:var(--muted)">· Sep 6, 2026</span></li>
+              <li>SQL Injection Fundamentals <span style="color:var(--muted)">· Sep 7, 2026</span></li>
+              <li>Secure Coding 101: JavaScript <span style="color:var(--muted)">· Sep 8, 2026</span></li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <div class="cert-col">
+        <div class="cert-group card reveal">
+          <p class="cert-group-head"><i class="fas fa-shield-halved" aria-hidden="true"></i> Cybersecurity</p>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Respuesta a Incidentes y Taxonomía en Ciberseguridad</span>
+            <div class="cert-tags">
+              <span class="tag tag-anci">ANCI Chile</span>
+              <span class="tag tag-year">Ago 10, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Ethical Hacker</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jun 26, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">CyberOps Associate</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">2023</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Cybersecurity Defense Analyst Career Path <small>Exam</small></span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jul 01, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Junior Cybersecurity Analyst Career Path <small>Exam</small></span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jun 26, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Network Security</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jun 29, 2025</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Endpoint Security</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jun 30, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Ethical Hacking &amp; Cybersecurity Management</span>
+            <div class="cert-tags">
+              <span class="tag tag-duoc">Duoc UC</span>
+              <span class="tag tag-year">2025</span>
+            </div>
           </div>
         </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CyberOps Associate</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">2023</span>
+        <div class="cert-group card reveal">
+          <p class="cert-group-head"><i class="fas fa-code" aria-hidden="true"></i> Automation &amp; Programming</p>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">DevNet Associate</span>
+            <div class="cert-tags">
+              <span class="tag tag-duoc">Duoc UC</span>
+              <span class="tag tag-year">2026</span>
+            </div>
           </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Cybersecurity Defense Analyst Career Path <small>Exam</small></span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jul 01, 2026</span>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Python Essentials 1</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jun 26, 2026</span>
+            </div>
           </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Junior Cybersecurity Analyst Career Path <small>Exam</small></span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jun 26, 2026</span>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">C++ Essentials 1</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Ago 10, 2026</span>
+            </div>
           </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Network Security</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jun 29, 2025</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Endpoint Security</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jun 30, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Ethical Hacking &amp; Cybersecurity Management</span>
-          <div class="cert-tags">
-            <span class="tag tag-duoc">Duoc UC</span>
-            <span class="tag tag-year">2025</span>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Linux Essentials</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jun 26, 2026</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="cert-group card reveal">
-        <p class="cert-group-head"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking &amp; IoT</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CCNP Enterprise: Advanced Routing <small>Cisco NetAcad course · Duoc UC</small></span>
-          <div class="cert-tags">
-            <span class="tag tag-duoc">Duoc UC</span>
-            <span class="tag tag-year">Mar 11, 2026</span>
+      <div class="cert-col">
+        <div class="cert-group card reveal">
+          <p class="cert-group-head"><i class="fas fa-cloud" aria-hidden="true"></i> Data, Cloud &amp; AI</p>
+          <div class="cert-item">
+            <div class="cert-dot aws" aria-hidden="true"></div>
+            <span class="cert-name">AWS Academy Graduate — Cloud Foundations</span>
+            <div class="cert-tags">
+              <span class="tag tag-aws">AWS</span>
+              <span class="tag tag-year">Nov 26, 2023</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Orquestación Multiagente &amp; Servidores MCP (Microsoft Agent Framework)</span>
+            <div class="cert-tags">
+              <span class="tag tag-ms">Microsoft</span>
+              <span class="tag tag-year">Ago 07, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Minería de Conocimiento &amp; RAG (Foundry IQ &amp; Azure AI Search)</span>
+            <div class="cert-tags">
+              <span class="tag tag-ms">Microsoft</span>
+              <span class="tag tag-year">Ago 07, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Desarrollo de Agentes de Voz en Tiempo Real &amp; Speech AI</span>
+            <div class="cert-tags">
+              <span class="tag tag-ms">Microsoft</span>
+              <span class="tag tag-year">Ago 07, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Data Science Essentials with Python</span>
+            <div class="cert-tags">
+              <span class="tag tag-cisco">Cisco</span>
+              <span class="tag tag-year">Jul 01, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Artificial Intelligence Fundamentals</span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">IBM</span>
+              <span class="tag tag-year">Jun 26, 2026</span>
+            </div>
           </div>
         </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CCNP Enterprise: Core Networking <small>Cisco NetAcad course · Duoc UC</small></span>
-          <div class="cert-tags">
-            <span class="tag tag-duoc">Duoc UC</span>
-            <span class="tag tag-year">Jun 25, 2026</span>
+        <div class="cert-group card reveal">
+          <p class="cert-group-head"><i class="fas fa-robot" aria-hidden="true"></i> Claude Academy</p>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Claude with Google Cloud's Vertex AI <small><a href="https://academy.claude.com/verify/fd86d4f84a8103e1c3defd62c4faa4a4" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">Anthropic</span>
+              <span class="tag tag-year">Oct 10, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Claude Platform 101 <small><a href="https://academy.claude.com/badges/a3ded80f-6259-46a7-9fd6-0a7d1a23a0f9" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">Anthropic</span>
+              <span class="tag tag-year">Oct 10, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Claude Code 101 <small><a href="https://academy.claude.com/badges/bfe60028-bf70-4331-83c2-bf7e19688415" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">Anthropic</span>
+              <span class="tag tag-year">Oct 10, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Claude 101 <small><a href="https://academy.claude.com/badges/d572dd2a-d32e-42eb-b46f-35bc4b0d7d6a" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">Anthropic</span>
+              <span class="tag tag-year">Oct 10, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Introduction to Claude Tag <small><a href="https://academy.claude.com/badges/09fda17d-1a86-4428-be12-8b7dc136f458" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">Anthropic</span>
+              <span class="tag tag-year">Oct 10, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">Introduction to Claude Cowork <small><a href="https://academy.claude.com/badges/83ac90d6-60e6-4116-a0a2-674633fad4ec" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">Anthropic</span>
+              <span class="tag tag-year">Oct 10, 2026</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot done" aria-hidden="true"></div>
+            <span class="cert-name">AI capabilities and limitations <small><a href="https://academy.claude.com/badges/910f33a9-356f-4345-84e9-a631d388c43b" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
+            <div class="cert-tags">
+              <span class="tag tag-dev">Anthropic</span>
+              <span class="tag tag-year">Oct 10, 2026</span>
+            </div>
           </div>
         </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CCNA: Enterprise Networking, Security &amp; Automation</span>
-          <div class="cert-tags">
-            <span class="tag tag-duoc">Duoc UC</span>
-            <span class="tag tag-year">2024</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">CCNA: Routing &amp; Switching</span>
-          <div class="cert-tags">
-            <span class="tag tag-duoc">Duoc UC</span>
-            <span class="tag tag-year">2023</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Diseño e Implementación de Redes Híbridas (Azure VNets)</span>
-          <div class="cert-tags">
-            <span class="tag tag-ms">Microsoft</span>
-            <span class="tag tag-year">Ago 11, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Network Technician Career Path <small>Exam</small></span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jul 01, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Troubleshooting &amp; Maintaining Cisco IP Networks</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">2025</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Network Support and Security</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jun 30, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Network Addressing and Basic Troubleshooting</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jun 27, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Emerging IoT Technology Surveillance</span>
-          <div class="cert-tags">
-            <span class="tag tag-duoc">Duoc UC</span>
-            <span class="tag tag-year">2025</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Introduction to IoT</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Oct 23, 2025</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-group card reveal">
-        <p class="cert-group-head"><i class="fas fa-cloud" aria-hidden="true"></i> Data, Cloud &amp; AI</p>
-        <div class="cert-item">
-          <div class="cert-dot aws" aria-hidden="true"></div>
-          <span class="cert-name">AWS Academy Graduate — Cloud Foundations</span>
-          <div class="cert-tags">
-            <span class="tag tag-aws">AWS</span>
-            <span class="tag tag-year">Nov 26, 2023</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Orquestación Multiagente &amp; Servidores MCP (Microsoft Agent Framework)</span>
-          <div class="cert-tags">
-            <span class="tag tag-ms">Microsoft</span>
-            <span class="tag tag-year">Ago 07, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Minería de Conocimiento &amp; RAG (Foundry IQ &amp; Azure AI Search)</span>
-          <div class="cert-tags">
-            <span class="tag tag-ms">Microsoft</span>
-            <span class="tag tag-year">Ago 07, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Desarrollo de Agentes de Voz en Tiempo Real &amp; Speech AI</span>
-          <div class="cert-tags">
-            <span class="tag tag-ms">Microsoft</span>
-            <span class="tag tag-year">Ago 07, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Data Science Essentials with Python</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jul 01, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Artificial Intelligence Fundamentals</span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">IBM</span>
-            <span class="tag tag-year">Jun 26, 2026</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-group card reveal">
-        <p class="cert-group-head"><i class="fas fa-code" aria-hidden="true"></i> Automation &amp; Programming</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">DevNet Associate</span>
-          <div class="cert-tags">
-            <span class="tag tag-duoc">Duoc UC</span>
-            <span class="tag tag-year">2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Python Essentials 1</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jun 26, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">C++ Essentials 1</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Ago 10, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Linux Essentials</span>
-          <div class="cert-tags">
-            <span class="tag tag-cisco">Cisco</span>
-            <span class="tag tag-year">Jun 26, 2026</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-group card reveal">
-        <p class="cert-group-head"><i class="fas fa-robot" aria-hidden="true"></i> Claude Academy</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Claude with Google Cloud's Vertex AI <small><a href="https://academy.claude.com/verify/fd86d4f84a8103e1c3defd62c4faa4a4" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">Anthropic</span>
-            <span class="tag tag-year">Oct 10, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Claude Platform 101 <small><a href="https://academy.claude.com/badges/a3ded80f-6259-46a7-9fd6-0a7d1a23a0f9" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">Anthropic</span>
-            <span class="tag tag-year">Oct 10, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Claude Code 101 <small><a href="https://academy.claude.com/badges/bfe60028-bf70-4331-83c2-bf7e19688415" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">Anthropic</span>
-            <span class="tag tag-year">Oct 10, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Claude 101 <small><a href="https://academy.claude.com/badges/d572dd2a-d32e-42eb-b46f-35bc4b0d7d6a" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">Anthropic</span>
-            <span class="tag tag-year">Oct 10, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Introduction to Claude Tag <small><a href="https://academy.claude.com/badges/09fda17d-1a86-4428-be12-8b7dc136f458" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">Anthropic</span>
-            <span class="tag tag-year">Oct 10, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">Introduction to Claude Cowork <small><a href="https://academy.claude.com/badges/83ac90d6-60e6-4116-a0a2-674633fad4ec" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">Anthropic</span>
-            <span class="tag tag-year">Oct 10, 2026</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">AI capabilities and limitations <small><a href="https://academy.claude.com/badges/910f33a9-356f-4345-84e9-a631d388c43b" target="_blank" rel="noopener noreferrer" style="color:var(--purple);text-decoration:none;">verify ↗</a></small></span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">Anthropic</span>
-            <span class="tag tag-year">Oct 10, 2026</span>
-          </div>
-        </div>
-      </div>
-      <div class="cert-group card reveal">
-        <p class="cert-group-head"><i class="fas fa-user-secret" aria-hidden="true"></i> Hands-on Labs</p>
-        <div class="cert-item">
-          <div class="cert-dot done" aria-hidden="true"></div>
-          <span class="cert-name">HackTheBox Academy: 27 module completion badges</span>
-          <div class="cert-tags">
-            <span class="tag tag-dev">HackTheBox</span>
-          </div>
-        </div>
-        <details class="other-courses" style="margin-top:.6rem;padding:0 .9rem;">
-          <summary>Modules completed · 27</summary>
-          <ul style="list-style:none;padding:.5rem 0 .75rem;font-size:.8rem;color:var(--soft);line-height:1.7;">
-            <li>Learning Process <span style="color:var(--muted)">· Aug 11, 2026</span></li>
-            <li>Introduction to Academy <span style="color:var(--muted)">· Aug 11, 2026</span></li>
-            <li>Linux Fundamentals <span style="color:var(--muted)">· Aug 11, 2026</span></li>
-            <li>Introduction to Bash Scripting <span style="color:var(--muted)">· Aug 15, 2026</span></li>
-            <li>Introduction to Networking <span style="color:var(--muted)">· Aug 13, 2026</span></li>
-            <li>Web Requests <span style="color:var(--muted)">· Aug 11, 2026</span></li>
-            <li>Using the Metasploit Framework <span style="color:var(--muted)">· Aug 16, 2026</span></li>
-            <li>JavaScript Deobfuscation <span style="color:var(--muted)">· Aug 12, 2026</span></li>
-            <li>Windows Fundamentals <span style="color:var(--muted)">· Aug 13, 2026</span></li>
-            <li>Introduction to Web Applications <span style="color:var(--muted)">· Aug 16, 2026</span></li>
-            <li>Getting Started <span style="color:var(--muted)">· Aug 13, 2026</span></li>
-            <li>Intro to Network Traffic Analysis <span style="color:var(--muted)">· Aug 16, 2026</span></li>
-            <li>Introduction to Information Security <span style="color:var(--muted)">· Aug 13, 2026</span></li>
-            <li>Introduction to Penetration Testing <span style="color:var(--muted)">· Aug 16, 2026</span></li>
-            <li>Network Foundations <span style="color:var(--muted)">· Aug 13, 2026</span></li>
-            <li>Pentest in a Nutshell <span style="color:var(--muted)">· Aug 16, 2026</span></li>
-            <li>Hacking WordPress <span style="color:var(--muted)">· Sep 1, 2026</span></li>
-            <li>Network Enumeration with Nmap <span style="color:var(--muted)">· Sep 1, 2026</span></li>
-            <li>Cracking Passwords with Hashcat <span style="color:var(--muted)">· Sep 1, 2026</span></li>
-            <li>Active Directory LDAP <span style="color:var(--muted)">· Sep 1, 2026</span></li>
-            <li>File Inclusion <span style="color:var(--muted)">· Sep 2, 2026</span></li>
-            <li>File Transfers <span style="color:var(--muted)">· Sep 3, 2026</span></li>
-            <li>DNS Enumeration Using Python <span style="color:var(--muted)">· Sep 4, 2026</span></li>
-            <li>OSINT: Corporate Recon <span style="color:var(--muted)">· Sep 5, 2026</span></li>
-            <li>Stack-Based Buffer Overflows <span style="color:var(--muted)">· Sep 6, 2026</span></li>
-            <li>SQL Injection Fundamentals <span style="color:var(--muted)">· Sep 7, 2026</span></li>
-            <li>Secure Coding 101: JavaScript <span style="color:var(--muted)">· Sep 8, 2026</span></li>
-          </ul>
-        </details>
       </div>
     </div>
     <details class="other-courses">
