@@ -320,6 +320,26 @@ aside > .card:last-child { flex:1; }
 .verified-wide { margin-top:2rem; }
 .verified-wide .badges-grid { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.9rem; }
 
+
+/* Microsoft Learn achievements: separate educational record, not professional certifications */
+.learn-section { margin-top:2rem; }
+.learn-summary { margin:.3rem 0 1rem; color:var(--soft); line-height:1.7; font-size:.88rem; }
+.learn-summary strong { color:var(--text); }
+.learn-highlights { display:flex; flex-wrap:wrap; gap:.6rem; margin:.7rem 0; }
+.learn-highlights span { padding:.4rem .75rem; border:1px solid var(--border); border-radius:8px; color:var(--soft); font-size:.82rem; }
+.learn-highlights strong { color:var(--purple); font-size:1rem; }
+.learn-note { margin:.75rem 0 1rem; font-size:.78rem; line-height:1.6; color:var(--muted); }
+.learn-links { display:flex; gap:.7rem; flex-wrap:wrap; margin-bottom:1rem; }
+.learn-details { border-top:1px solid var(--border); padding-top:1rem; color:var(--soft); font-size:.84rem; }
+.learn-details summary { cursor:pointer; color:var(--text); font-weight:600; padding:.4rem 0; }
+.learn-details summary:focus-visible { outline:2px solid var(--purple); outline-offset:3px; }
+.learn-groups { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; padding-top:1.1rem; }
+.learn-group h3 { color:var(--text); font-size:.9rem; margin-bottom:.6rem; }
+.learn-group h3 small { font-size:.72rem; color:var(--muted); font-weight:400; }
+.learn-group ul { margin:0; padding-left:1.25rem; line-height:1.55; }
+.learn-group li { margin:.3rem 0; }
+@media(max-width:700px){ .learn-groups { grid-template-columns:1fr; } }
+
 /* ── Projects ────────────────────────────────────────── */
 .projects { display:flex; flex-direction:column; gap:1rem; }
 
@@ -524,13 +544,13 @@ aside > .card:last-child { flex:1; }
       </div>
       <div class="stat-divider" aria-hidden="true"></div>
       <div class="stat" role="listitem">
-        <span class="stat-num">24</span>
-        <span class="stat-label">Badge links</span>
+        <span class="stat-num">64</span>
+        <span class="stat-label">Microsoft Learn badges</span>
       </div>
       <div class="stat-divider" aria-hidden="true"></div>
       <div class="stat" role="listitem">
-        <span class="stat-num">2</span>
-        <span class="stat-label">Professional roles</span>
+        <span class="stat-num">11</span>
+        <span class="stat-label">Microsoft Learn trophies</span>
       </div>
     </div>
 
@@ -1378,6 +1398,93 @@ aside > .card:last-child { flex:1; }
             <span class="tag tag-year">Jul 28, 2026</span>
           </div>
         </div>
+    </details>
+  </section>
+
+
+  <!-- Microsoft Learn: logro de plan, distinto de certificaciones profesionales con examen -->
+  <section class="card reveal verified-wide learn-section" aria-labelledby="learn-title">
+    <p class="card-title" id="learn-title"><i class="fab fa-microsoft" aria-hidden="true"></i> Microsoft Learn · AI Engineer learning path</p>
+    <p class="learn-summary"><strong>Trayectoria profesional como ingeniero de IA</strong> — plan de aprendizaje completado.
+      Formación registrada en Microsoft Foundry, agentes de IA, protocolos MCP y A2A,
+      generación aumentada por recuperación (RAG), visión y voz, análisis con Python,
+      aprendizaje automático y redes híbridas Azure.</p>
+    <div class="learn-highlights" role="list" aria-label="Microsoft Learn achievements">
+      <span role="listitem"><strong>64</strong> distintivos de módulos</span>
+      <span role="listitem"><strong>11</strong> trofeos</span>
+      <span role="listitem"><strong>Nivel 9</strong> de Microsoft Learn</span>
+    </div>
+    <p class="learn-note">Los logros de módulos y los trofeos son formación en Microsoft Learn; no equivalen por sí solos a certificaciones profesionales con examen.</p>
+    <p class="learn-links">
+      <a href="https://learn.microsoft.com/es-mx/users/hugoherrerainostroza-4542/achievements" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-award" aria-hidden="true"></i> Mis logros Microsoft Learn</a>
+      <a href="https://learn.microsoft.com/es-mx/plans/odgoumq07e4x83?tab=credentials-tab" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-book-open" aria-hidden="true"></i> Ver trayectoria de IA</a>
+    </p>
+    <details class="learn-details">
+      <summary>Ver los 64 módulos completados, agrupados por fecha y temática</summary>
+      <div class="learn-groups"><div class="learn-group"><h3>Machine Learning y análisis de datos <small>· 22 oct 2026 · 6 módulos</small></h3><ul><li>Entrenamiento y evaluación de modelos de aprendizaje profundo</li>
+<li>Entrenamiento y evaluación de modelos de agrupación en clústeres</li>
+<li>Entrenamiento y evaluación de modelos de clasificación</li>
+<li>Entrenamiento y evaluación de modelos de regresión</li>
+<li>Exploración y análisis de datos con Python</li>
+<li>Introducción a los conceptos de aprendizaje automático</li></ul></div>
+<div class="learn-group"><h3>Redes Azure y optimización de agentes <small>· 11 ago 2026 · 9 módulos</small></h3><ul><li>Diseño e implementación de redes híbridas</li>
+<li>Introducción a las redes virtuales de Azure</li>
+<li>Administración y optimización de las inversiones en agentes de inteligencia artificial en Azure</li>
+<li>Diseño de soluciones de agente de IA escalables y rentables en Azure</li>
+<li>Maximizar la eficiencia de los costos mediante la elección del enfoque adecuado de desarrollo de agentes de IA en Azure</li>
+<li>Previsión de la rentabilidad de la inversión (ROI) de los agentes de inteligencia artificial</li>
+<li>Descripción de los principales factores de costos de los agentes de inteligencia artificial</li>
+<li>Identificar y priorizar casos de uso de alto impacto para agentes de IA</li>
+<li>Implementación de procedimientos recomendados para mejorar la eficacia del agente de IA y garantizar el éxito a largo plazo</li></ul></div>
+<div class="learn-group"><h3>Microsoft Foundry, IA generativa, MCP y agentes <small>· 7 ago 2026 · 42 módulos</small></h3><ul><li>Resumen de datos con Herramientas de Foundry y Azure Database for PostgreSQL</li>
+<li>Creación de una solución de minería de conocimiento con Azure AI Search</li>
+<li>Extracción de datos con Azure Document Intelligence</li>
+<li>Creación de una aplicación cliente de Azure Content Understanding</li>
+<li>Creación de una solución de análisis multimodal con Azure Content Understanding</li>
+<li>Análisis de imágenes con Content Understanding</li>
+<li>Generación de vídeos con Microsoft Foundry</li>
+<li>Generación de imágenes con IA</li>
+<li>Desarrollo de una aplicación de IA generativa habilitada para la visión</li>
+<li>Traducción de texto y voz con Microsoft Foundry Tools</li>
+<li>Desarrollo de un agente de voz en tiempo real de Azure en Microsoft Foundry</li>
+<li>Desarrollo de un agente de voz con el servidor MCP de Voz de Azure</li>
+<li>Creación de aplicaciones habilitadas para voz con Azure Speech en Microsoft Foundry Tools</li>
+<li>Desarrollo de una aplicación de IA generativa compatible con voz</li>
+<li>Desarrollo de un agente de análisis de texto con el servidor MCP de lenguaje de Azure</li>
+<li>Análisis de texto con lenguaje de Azure en Foundry Tools</li>
+<li>Adaptación de la IA a la organización</li>
+<li>Creación de valor empresarial con IA</li>
+<li>Aprovechamiento de las herramientas y los recursos de inteligencia artificial para la empresa</li>
+<li>Adopción de las prácticas y los principios de inteligencia artificial responsables</li>
+<li>Detección de agentes de Azure AI con A2A</li>
+<li>Orquestación de una solución multiagente mediante Microsoft Agent Framework</li>
+<li>Desarrollo de un agente de IA con Microsoft Agent Framework</li>
+<li>Creación de flujos de trabajo controlados por agentes mediante Microsoft Foundry</li>
+<li>Integración del agente con Microsoft 365</li>
+<li>Construir agentes de inteligencia artificial mejorados con conocimiento con Foundry IQ</li>
+<li>Integración de herramientas de MCP con Azure AI Agents</li>
+<li>Integración de herramientas personalizadas en el agente</li>
+<li>Desarrollo de agentes de inteligencia artificial con Microsoft Foundry y Visual Studio Code</li>
+<li>Implementación de una solución de IA generativa responsable en Microsoft Foundry</li>
+<li>Optimización del rendimiento del modelo de IA generativa con Microsoft Foundry</li>
+<li>Desarrollo de aplicaciones de IA generativas que usan herramientas</li>
+<li>Desarrollo de una aplicación de chat de IA generativa con Microsoft Foundry</li>
+<li>Selección, implementación y evaluación de modelos de Microsoft Foundry</li>
+<li>Planeamiento y preparación para desarrollar soluciones de inteligencia artificial en Azure</li>
+<li>Introducción a Microsoft Foundry IQ</li>
+<li>Introducción a la extracción de información con tecnología de inteligencia artificial en Azure</li>
+<li>Introducción a Computer Vision en Azure</li>
+<li>Introducción a la voz en Azure</li>
+<li>Introducción al análisis de texto en Azure</li>
+<li>Introducción a la inteligencia artificial generativa y a los agentes en Azure</li>
+<li>Introducción a la inteligencia artificial en Azure</li></ul></div>
+<div class="learn-group"><h3>Fundamentos de IA y RAG <small>· 6 ago 2026 · 7 módulos</small></h3><ul><li>Introducción a los conceptos de generación aumentada por recuperación</li>
+<li>Introducción a los conceptos de extracción de información con tecnología de inteligencia artificial</li>
+<li>Introducción a los conceptos de computer vision</li>
+<li>Introducción a los conceptos de voz de IA</li>
+<li>Introducción a los conceptos de procesamiento de lenguaje natural</li>
+<li>Introducción a los conceptos de inteligencia artificial</li>
+<li>Introducción a la inteligencia artificial y los agentes generativos</li></ul></div></div>
     </details>
   </section>
 
